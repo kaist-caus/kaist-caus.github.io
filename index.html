@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center for Advanced Urban Systems (CAUS) | 도시 인공지능 연구소</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 22, 51, 0.8), rgba(0, 22, 51, 0.8)), url('https://placehold.co/1920x1080/001633/e0e0e0?text=Abstract+Urban+Network');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.25rem; /* 20px */
+            color: #4b5563; /* gray-600 */
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nav-link {
+            @apply text-white/80 hover:text-white transition-colors duration-300;
+        }
+        .nav-link-scrolled {
+             @apply text-gray-600 hover:text-gray-900 transition-colors duration-300;
+        }
+        .lang-btn {
+            @apply text-sm font-medium px-2 py-1 rounded-md;
+        }
+        .lang-btn.active {
+            @apply bg-white/20 text-white;
+        }
+        .lang-btn-scrolled.active {
+            @apply bg-gray-200 text-gray-900;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div id="logo" class="text-xl font-bold text-white transition-colors duration-300">
+                    CAUS
+                </div>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#about" class="nav-link" data-lang-key="nav_about">ABOUT</a>
+                    <a href="#research" class="nav-link" data-lang-key="nav_research">RESEARCH</a>
+                    <a href="#people" class="nav-link" data-lang-key="nav_people">PEOPLE</a>
+                    <a href="#events" class="nav-link" data-lang-key="nav_events">EVENTS</a>
+                    <a href="#publications" class="nav-link" data-lang-key="nav_publications">PUBLICATIONS</a>
+                    <a href="#contact" class="nav-link" data-lang-key="nav_contact">CONTACT</a>
+                </nav>
+                <div class="flex items-center">
+                    <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4">
+                        <button id="lang-en" class="lang-btn active">EN</button>
+                        <button id="lang-ko" class="lang-btn">KO</button>
+                    </div>
+                     <button id="mobile-menu-button" class="md:hidden text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900/95 z-40 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full">
+            <a href="#about" class="text-white text-2xl font-bold mb-6" data-lang-key="nav_about_mobile">ABOUT</a>
+            <a href="#research" class="text-white text-2xl font-bold mb-6" data-lang-key="nav_research_mobile">RESEARCH</a>
+            <a href="#people" class="text-white text-2xl font-bold mb-6" data-lang-key="nav_people_mobile">PEOPLE</a>
+            <a href="#events" class="text-white text-2xl font-bold mb-6" data-lang-key="nav_events_mobile">EVENTS</a>
+            <a href="#publications" class="text-white text-2xl font-bold mb-6" data-lang-key="nav_publications_mobile">PUBLICATIONS</a>
+            <a href="#contact" class="text-white text-2xl font-bold mb-12" data-lang-key="nav_contact_mobile">CONTACT</a>
+            <div class="flex items-center space-x-4">
+                <button id="lang-en-mobile" class="text-white text-lg font-semibold border-2 border-white rounded-md px-4 py-1">EN</button>
+                <button id="lang-ko-mobile" class="text-white text-lg font-semibold border-2 border-transparent rounded-md px-4 py-1">KO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-white text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4" data-lang-key="hero_title">Center for Advanced Urban Systems (CAUS)</h1>
+            <h2 class="text-2xl md:text-4xl font-semibold text-gray-300" data-lang-key="hero_subtitle">도시 인공지능 연구소</h2>
+            <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200" data-lang-key="hero_description">
+                Pioneering Urban Intelligence for a Sustainable Future at KAIST
+            </p>
+            <a href="#about" class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105" data-lang-key="hero_button">
+                Learn More
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900" data-lang-key="about_title">About CAUS</h2>
+                <p class="section-subtitle" data-lang-key="about_subtitle">
+                    Fostering interdisciplinary collaboration to build the next generation of smart cities.
+                </p>
+                <div class="max-w-4xl mx-auto text-left text-lg text-gray-700 space-y-6" data-lang-key="about_text">
+                    <p>
+                        The <span class="font-bold">Center for Advanced Urban Systems (CAUS)</span>, or <span class="font-bold">도시 인공지능 연구소</span>, is a leading urban research institution at the <span class="font-bold">Korea Advanced Institute of Science and Technology (KAIST)</span>. Generously sponsored by GS Engineering & Construction, our mission is to redefine urban living through cutting-edge AI and data science.
+                    </p>
+                    <p>
+                        We thrive on collaboration, maintaining a strong international network with world-class institutions like <span class="font-bold">MIT, Stanford, and NYU</span>. This global partnership allows us to engage in pioneering joint research and advisory projects, positioning us at the forefront of smart city innovation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Areas Section -->
+        <section id="research" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900" data-lang-key="research_title">Key Research Areas</h2>
+                <p class="section-subtitle" data-lang-key="research_subtitle">
+                    Our research is structured around five core pillars, from global networks to human-centric urban technologies.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-left">
+                        <i data-lucide="globe-2" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="research_1_title">Global Research Network</h3>
+                        <p class="text-gray-600" data-lang-key="research_1_desc">글로벌 top-tier 스마트 시티 국제 협력 및 자문 네트워크를 구성하고 공동 연구 및 기술 자문에 활용</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-left">
+                        <i data-lucide="database" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="research_2_title">Urban Digital Infrastructure</h3>
+                        <p class="text-gray-600" data-lang-key="research_2_desc">어반 컴퓨팅, 액티브 센싱, 클라우드 등 도시 내 데이터를 수집 가공 저장 공유하기 위한 인프라 연구</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-left">
+                        <i data-lucide="brain-circuit" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="research_3_title">Urban Digital Intelligence</h3>
+                        <p class="text-gray-600" data-lang-key="research_3_desc">풍부한 도시 데이터 자원을 기반으로 개인, 빌딩, 커뮤니티, 도시 등 다중 스케일에서 이해되고 활용될 수 있는 지능(intelligence) 발굴 및 예측 기술</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-left">
+                        <i data-lucide="users" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="research_4_title">Urban-Human Interaction</h3>
+                        <p class="text-gray-600" data-lang-key="research_4_desc">Top-down에서 벗어나는 거주민 관점에서의 도시 지능 발굴 및 도시의 경제적, 사회적 건강 증진 기술</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-left">
+                        <i data-lucide="layout-template" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-lang-key="research_5_title">Urban Digital Toolkit</h3>
+                        <p class="text-gray-600" data-lang-key="research_5_desc">데이터, 분석, 리포트 등 시각화 및 활용 toolkit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- People Section -->
+        <section id="people" class="py-20 lg:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Team</h2>
+                <p class="section-subtitle" data-lang-key="people_subtitle">
+                    Meet the dedicated faculty and researchers driving our vision forward.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <!-- Sample Researcher Profile -->
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Prof.+A" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
+                        <h4 class="font-bold text-lg">Professor A</h4>
+                        <p class="text-sm text-gray-600" data-lang-key="people_role_1">Director of CAUS</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Prof.+B" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
+                        <h4 class="font-bold text-lg">Professor B</h4>
+                        <p class="text-sm text-gray-600" data-lang-key="people_role_2">Lead, Urban Intelligence</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Prof.+C" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
+                        <h4 class="font-bold text-lg">Professor C</h4>
+                        <p class="text-sm text-gray-600" data-lang-key="people_role_3">Lead, Digital Infrastructure</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Dr.+D" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
+                        <h4 class="font-bold text-lg">Dr. D</h4>
+                        <p class="text-sm text-gray-600" data-lang-key="people_role_4">Senior Researcher</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Dr.+E" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
+                        <h4 class="font-bold text-lg">Dr. E</h4>
+                        <p class="text-sm text-gray-600" data-lang-key="people_role_5">Senior Researcher</p>
+                    </div>
+                </div>
+                <p class="mt-12 text-lg text-gray-700" data-lang-key="people_footer">Our center is also home to over 50 talented graduate students and post-doctoral researchers from various disciplines.</p>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="section-title text-gray-900" data-lang-key="events_title">News & Events</h2>
+                    <p class="section-subtitle" data-lang-key="events_subtitle">
+                        Join our open seminars and stay updated with the latest news from CAUS.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6 flex items-start space-x-6 hover:bg-blue-50 transition-colors duration-300">
+                        <div class="text-center border-r border-gray-200 pr-6">
+                            <p class="text-3xl font-bold text-blue-600">25</p>
+                            <p class="text-sm font-medium text-gray-600" data-lang-key="event_1_month">JUL 2025</p>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-xl mb-1" data-lang-key="event_1_title">Upcoming Seminar: AI in Urban Planning</h3>
+                            <p class="text-gray-600 mb-3" data-lang-key="event_1_speaker">Guest Speaker: Dr. Jane Doe (MIT Senseable City Lab)</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline"><i data-lucide="youtube" class="w-4 h-4 mr-1"></i> <span data-lang-key="event_youtube">Watch on YouTube</span></a>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline"><i data-lucide="video" class="w-4 h-4 mr-1"></i> <span data-lang-key="event_zoom">Join Zoom</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6 flex items-start space-x-6 hover:bg-blue-50 transition-colors duration-300">
+                        <div class="text-center border-r border-gray-200 pr-6">
+                            <p class="text-3xl font-bold text-blue-600">10</p>
+                            <p class="text-sm font-medium text-gray-600" data-lang-key="event_2_month">AUG 2025</p>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-xl mb-1" data-lang-key="event_2_title">CAUS Monthly Meeting</h3>
+                            <p class="text-gray-600 mb-3" data-lang-key="event_2_topic">Topic: Progress on the Digital Toolkit Project</p>
+                             <div class="flex space-x-4">
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-gray-500"><i data-lucide="info" class="w-4 h-4 mr-1"></i> <span data-lang-key="event_internal">Internal Event</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 lg:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="section-title text-gray-900" data-lang-key="publications_title">Featured Publications</h2>
+                    <p class="section-subtitle" data-lang-key="publications_subtitle">
+                        A selection of our recent contributions to the field of urban science.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="p-4 border-l-4 border-blue-600">
+                        <p class="text-lg font-medium text-gray-800">Park, Y., Kim, J., & Lee, S. (2025). "The Role of Urban Digital Twins in Participatory Planning." <span class="italic">Journal of Urban Technology, 32</span>(1), 45-62.</p>
+                    </div>
+                    <div class="p-4 border-l-4 border-blue-600">
+                        <p class="text-lg font-medium text-gray-800">Choi, H., & Doe, J. (2024). "Predicting Pedestrian Flow with Graph Convolutional Networks." <span class="italic">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 8</span>(4), 1-25.</p>
+                    </div>
+                    <div class="p-4 border-l-4 border-blue-600">
+                        <p class="text-lg font-medium text-gray-800">Lee, M. (2024). "A Framework for Urban-Human Interaction based on Augmented Reality." <span class="italic">IEEE Transactions on Visualization and Computer Graphics, 30</span>(11), 1345-1358.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Partners Section -->
+        <section id="partners" class="py-16">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-lg font-semibold text-gray-600 mb-8" data-lang-key="partners_title">Our Valued Partners & Sponsors</h3>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=KAIST" alt="KAIST Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=GS+E%26C" alt="GS E&C Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=MIT" alt="MIT Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=Stanford" alt="Stanford Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=NYU" alt="NYU Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">CAUS</h3>
+                    <p class="text-gray-400" data-lang-key="footer_center_name">Center for Advanced Urban Systems<br>도시 인공지능 연구소</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4" data-lang-key="footer_contact">Contact Us</h4>
+                    <p class="text-gray-400">KAIST<br>
+                    291 Daehak-ro, Yuseong-gu,<br>
+                    Daejeon 34141, Republic of Korea<br>
+                    <a href="mailto:contact@caus.kaist.ac.kr" class="text-blue-400 hover:underline">contact@caus.kaist.ac.kr</a>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4" data-lang-key="footer_follow">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p data-lang-key="footer_copyright">&copy; 2025 Center for Advanced Urban Systems (CAUS). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // --- Language Translation ---
+        const translations = {
+            en: {
+                nav_about: "ABOUT",
+                nav_research: "RESEARCH",
+                nav_people: "PEOPLE",
+                nav_events: "EVENTS",
+                nav_publications: "PUBLICATIONS",
+                nav_contact: "CONTACT",
+                nav_about_mobile: "ABOUT",
+                nav_research_mobile: "RESEARCH",
+                nav_people_mobile: "PEOPLE",
+                nav_events_mobile: "EVENTS",
+                nav_publications_mobile: "PUBLICATIONS",
+                nav_contact_mobile: "CONTACT",
+                hero_title: "Center for Advanced Urban Systems (CAUS)",
+                hero_subtitle: "도시 인공지능 연구소",
+                hero_description: "Pioneering Urban Intelligence for a Sustainable Future at KAIST",
+                hero_button: "Learn More",
+                about_title: "About CAUS",
+                about_subtitle: "Fostering interdisciplinary collaboration to build the next generation of smart cities.",
+                about_text: `<p>The <span class="font-bold">Center for Advanced Urban Systems (CAUS)</span>, or <span class="font-bold">도시 인공지능 연구소</span>, is a leading urban research institution at the <span class="font-bold">Korea Advanced Institute of Science and Technology (KAIST)</span>. Generously sponsored by GS Engineering & Construction, our mission is to redefine urban living through cutting-edge AI and data science.</p><p>We thrive on collaboration, maintaining a strong international network with world-class institutions like <span class="font-bold">MIT, Stanford, and NYU</span>. This global partnership allows us to engage in pioneering joint research and advisory projects, positioning us at the forefront of smart city innovation.</p>`,
+                research_title: "Key Research Areas",
+                research_subtitle: "Our research is structured around five core pillars, from global networks to human-centric urban technologies.",
+                research_1_title: "Global Research Network",
+                research_1_desc: "We form a global top-tier smart city international cooperation and advisory network for joint research and technical consultation.",
+                research_2_title: "Urban Digital Infrastructure",
+                research_2_desc: "Research on infrastructure for collecting, processing, storing, and sharing data in the city, including urban computing, active sensing, and cloud technologies.",
+                research_3_title: "Urban Digital Intelligence",
+                research_3_desc: "Discovering and predicting intelligence that can be understood and utilized at multiple scales—individual, building, community, and city—based on rich urban data resources.",
+                research_4_title: "Urban-Human Interaction",
+                research_4_desc: "Moving beyond top-down approaches to discover urban intelligence from a resident's perspective and promote the economic and social health of the city.",
+                research_5_title: "Urban Digital Toolkit",
+                research_5_desc: "A toolkit for visualizing and utilizing data, analysis, and reports.",
+                people_title: "Our Team",
+                people_subtitle: "Meet the dedicated faculty and researchers driving our vision forward.",
+                people_role_1: "Director of CAUS",
+                people_role_2: "Lead, Urban Intelligence",
+                people_role_3: "Lead, Digital Infrastructure",
+                people_role_4: "Senior Researcher",
+                people_role_5: "Senior Researcher",
+                people_footer: "Our center is also home to over 50 talented graduate students and post-doctoral researchers from various disciplines.",
+                events_title: "News & Events",
+                events_subtitle: "Join our open seminars and stay updated with the latest news from CAUS.",
+                event_1_month: "JUL 2025",
+                event_1_title: "Upcoming Seminar: AI in Urban Planning",
+                event_1_speaker: "Guest Speaker: Dr. Jane Doe (MIT Senseable City Lab)",
+                event_youtube: "Watch on YouTube",
+                event_zoom: "Join Zoom",
+                event_2_month: "AUG 2025",
+                event_2_title: "CAUS Monthly Meeting",
+                event_2_topic: "Topic: Progress on the Digital Toolkit Project",
+                event_internal: "Internal Event",
+                publications_title: "Featured Publications",
+                publications_subtitle: "A selection of our recent contributions to the field of urban science.",
+                partners_title: "Our Valued Partners & Sponsors",
+                footer_center_name: "Center for Advanced Urban Systems<br>도시 인공지능 연구소",
+                footer_contact: "Contact Us",
+                footer_follow: "Follow Us",
+                footer_copyright: "&copy; 2025 Center for Advanced Urban Systems (CAUS). All Rights Reserved."
+            },
+            ko: {
+                nav_about: "소개",
+                nav_research: "연구",
+                nav_people: "구성원",
+                nav_events: "소식",
+                nav_publications: "연구 실적",
+                nav_contact: "연락처",
+                nav_about_mobile: "소개",
+                nav_research_mobile: "연구",
+                nav_people_mobile: "구성원",
+                nav_events_mobile: "소식",
+                nav_publications_mobile: "연구 실적",
+                nav_contact_mobile: "연락처",
+                hero_title: "도시 인공지능 연구소 (CAUS)",
+                hero_subtitle: "Center for Advanced Urban Systems",
+                hero_description: "KAIST에서 지속가능한 미래를 위한 도시 지능을 개척합니다",
+                hero_button: "더 알아보기",
+                about_title: "CAUS 소개",
+                about_subtitle: "차세대 스마트시티 구축을 위한 학제간 협력을 촉진합니다.",
+                about_text: `<p><span class="font-bold">도시 인공지능 연구소(CAUS)</span>는 <span class="font-bold">한국과학기술원(KAIST)</span>의 선도적인 도시 연구 기관입니다. GS건설의 후원으로 설립된 저희 연구소는 최첨단 AI 및 데이터 과학을 통해 도시 생활을 재정의하는 것을 목표로 합니다.</p><p>저희는 <span class="font-bold">MIT, 스탠포드, NYU</span>와 같은 세계적인 기관들과 강력한 국제 네트워크를 유지하며 협력을 기반으로 성장합니다. 이러한 글로벌 파트너십을 통해 선구적인 공동 연구 및 자문 프로젝트를 수행하며 스마트 시티 혁신의 선두에 서고 있습니다.</p>`,
+                research_title: "주요 연구 분야",
+                research_subtitle: "저희 연구는 글로벌 네트워크부터 인간 중심의 도시 기술에 이르기까지 다섯 가지 핵심 분야를 중심으로 구성되어 있습니다.",
+                research_1_title: "글로벌 연구 네트워크",
+                research_1_desc: "글로벌 top-tier 스마트 시티 국제 협력 및 자문 네트워크를 구성하고 공동 연구 및 기술 자문에 활용",
+                research_2_title: "도시 디지털 인프라",
+                research_2_desc: "어반 컴퓨팅, 액티브 센싱, 클라우드 등 도시 내 데이터를 수집 가공 저장 공유하기 위한 인프라 연구",
+                research_3_title: "도시 디지털 지능",
+                research_3_desc: "풍부한 도시 데이터 자원을 기반으로 개인, 빌딩, 커뮤니티, 도시 등 다중 스케일에서 이해되고 활용될 수 있는 지능(intelligence) 발굴 및 예측 기술",
+                research_4_title: "도시-인간 상호작용",
+                research_4_desc: "Top-down에서 벗어나는 거주민 관점에서의 도시 지능 발굴 및 도시의 경제적, 사회적 건강 증진 기술",
+                research_5_title: "도시 디지털 툴킷",
+                research_5_desc: "데이터, 분석, 리포트 등 시각화 및 활용 toolkit",
+                people_title: "연구팀",
+                people_subtitle: "우리의 비전을 이끌어가는 교수진과 연구원들을 만나보세요.",
+                people_role_1: "센터장",
+                people_role_2: "도시 지능 연구 책임",
+                people_role_3: "디지털 인프라 연구 책임",
+                people_role_4: "선임 연구원",
+                people_role_5: "선임 연구원",
+                people_footer: "저희 센터는 또한 다양한 분야의 50명 이상의 우수한 대학원생 및 박사후 연구원들과 함께하고 있습니다.",
+                events_title: "소식 및 행사",
+                events_subtitle: "공개 세미나에 참여하고 CAUS의 최신 소식을 받아보세요.",
+                event_1_month: "2025년 7월",
+                event_1_title: "다가오는 세미나: 도시 계획에서의 AI",
+                event_1_speaker: "초청 연사: 제인 도 박사 (MIT 센서블 시티 랩)",
+                event_youtube: "YouTube에서 시청",
+                event_zoom: "Zoom으로 참여",
+                event_2_month: "2025년 8월",
+                event_2_title: "CAUS 월간 회의",
+                event_2_topic: "주제: 디지털 툴킷 프로젝트 진행 상황",
+                event_internal: "내부 행사",
+                publications_title: "주요 연구 실적",
+                publications_subtitle: "도시 과학 분야에 대한 저희의 최근 기여를 소개합니다.",
+                partners_title: "주요 파트너 및 후원사",
+                footer_center_name: "도시 인공지능 연구소<br>Center for Advanced Urban Systems",
+                footer_contact: "연락처",
+                footer_follow: "소셜 미디어",
+                footer_copyright: "&copy; 2025 도시 인공지능 연구소 (CAUS). 모든 권리 보유."
+            }
+        };
+
+        const changeLanguage = (lang) => {
+            // Set language attribute on HTML tag
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-lang-key
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update button styles
+            const desktopEn = document.getElementById('lang-en');
+            const desktopKo = document.getElementById('lang-ko');
+            const mobileEn = document.getElementById('lang-en-mobile');
+            const mobileKo = document.getElementById('lang-ko-mobile');
+
+            if (lang === 'ko') {
+                desktopEn.classList.remove('active');
+                desktopKo.classList.add('active');
+                mobileEn.classList.remove('border-white');
+                mobileEn.classList.add('border-transparent');
+                mobileKo.classList.add('border-white');
+                mobileKo.classList.remove('border-transparent');
+            } else {
+                desktopKo.classList.remove('active');
+                desktopEn.classList.add('active');
+                mobileKo.classList.remove('border-white');
+                mobileKo.classList.add('border-transparent');
+                mobileEn.classList.add('border-white');
+                mobileEn.classList.remove('border-transparent');
+            }
+        };
+
+        // Event listeners for language switchers
+        document.getElementById('lang-en').addEventListener('click', () => changeLanguage('en'));
+        document.getElementById('lang-ko').addEventListener('click', () => changeLanguage('ko'));
+        document.getElementById('lang-en-mobile').addEventListener('click', () => changeLanguage('en'));
+        document.getElementById('lang-ko-mobile').addEventListener('click', () => changeLanguage('ko'));
+
+
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('header');
+        const logo = document.getElementById('logo');
+        const navLinks = header.querySelectorAll('nav a');
+        const langSwitcher = document.getElementById('lang-switcher');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'shadow-md', 'py-2');
+                header.classList.remove('py-4');
+                logo.classList.remove('text-white');
+                logo.classList.add('text-gray-900');
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-link');
+                    link.classList.add('nav-link-scrolled');
+                });
+                langSwitcher.classList.remove('border-white/30');
+                langSwitcher.classList.add('border-gray-300');
+                langSwitcher.querySelectorAll('button').forEach(btn => {
+                    btn.classList.add('lang-btn-scrolled');
+                });
+                mobileMenuButton.classList.remove('text-white');
+                mobileMenuButton.classList.add('text-gray-900');
+            } else {
+                header.classList.remove('bg-white', 'shadow-md', 'py-2');
+                header.classList.add('py-4');
+                logo.classList.add('text-white');
+                logo.classList.remove('text-gray-900');
+                navLinks.forEach(link => {
+                    link.classList.add('nav-link');
+                    link.classList.remove('nav-link-scrolled');
+                });
+                langSwitcher.classList.add('border-white/30');
+                langSwitcher.classList.remove('border-gray-300');
+                langSwitcher.querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('lang-btn-scrolled');
+                });
+                mobileMenuButton.classList.add('text-white');
+                mobileMenuButton.classList.remove('text-gray-900');
+            }
+        });
+
+        // --- Mobile Menu ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set default language on load
+        changeLanguage('en');
+
+    </script>
+</body>
+</html>
