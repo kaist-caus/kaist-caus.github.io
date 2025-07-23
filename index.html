@@ -23,7 +23,7 @@
             scroll-behavior: smooth;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 22, 51, 0.8), rgba(0, 22, 51, 0.8)), url('https://placehold.co/1920x1080/001633/e0e0e0?text=Abstract+Urban+Network');
+            background-image: linear-gradient(rgba(0, 22, 51, 0.8), rgba(0, 22, 51, 0.8)), url('https://placehold.co/1920x1080/001633/e0e0e0');
             background-size: cover;
             background-position: center;
         }
@@ -55,17 +55,31 @@
         .lang-btn-scrolled.active {
             @apply bg-gray-200 text-gray-900;
         }
+        /* Style for logo when header is scrolled */
+        #header.scrolled #caus-logo-img {
+            /* You can add styles here if your logo needs to change on a white background, e.g., using a CSS filter */
+            /* filter: invert(1); */
+        }
+        .video-thumbnail-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .video-thumbnail:hover .video-thumbnail-overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
-                <div id="logo" class="text-xl font-bold text-white transition-colors duration-300">
-                    CAUS
-                </div>
+                <!-- CAUS Logo -->
+                <a href="#" id="logo">
+                    <!-- Updated file path for the CAUS logo -->
+                    <img id="caus-logo-img" src="img/logo_caus.png" alt="CAUS Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/120x40/001633/ffffff?text=CAUS';">
+                </a>
                 <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                     <a href="#about" class="nav-link" data-lang-key="nav_about">ABOUT</a>
                     <a href="#research" class="nav-link" data-lang-key="nav_research">RESEARCH</a>
@@ -175,40 +189,146 @@
 
         <!-- People Section -->
         <section id="people" class="py-20 lg:py-32 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Team</h2>
-                <p class="section-subtitle" data-lang-key="people_subtitle">
-                    Meet the dedicated faculty and researchers driving our vision forward.
-                </p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    <!-- Sample Researcher Profile -->
-                    <div class="text-center">
-                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Prof.+A" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
-                        <h4 class="font-bold text-lg">Professor A</h4>
-                        <p class="text-sm text-gray-600" data-lang-key="people_role_1">Director of CAUS</p>
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Team</h2>
+                    <p class="section-subtitle" data-lang-key="people_subtitle">
+                        Meet the dedicated faculty, researchers, and students driving our vision forward.
+                    </p>
+                </div>
+
+                <div class="max-w-6xl mx-auto">
+                    <!-- KAIST Professors -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-8" data-lang-key="people_professors_title">KAIST Professors</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=YY" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Yoonjin Yoon">
+                            <h4 class="font-bold text-lg">Yoonjin Yoon</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Chair Professor, Civil & Environmental Eng. | Director of CAUS</p>
+                            <a href="https://spacetime.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=CK" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Changhyun Kwon">
+                            <h4 class="font-bold text-lg">Changhyun Kwon</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_changhyun_kwon_title">Associate Professor, Industrial & Systems Eng. | Vice director of CAUS</p>
+                            <a href="https://comet.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=JP" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Jinkyu Park">
+                            <h4 class="font-bold text-lg">Jinkyu Park</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Associate Professor, Industrial & Systems Eng.</p>
+                            <a href="http://silab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=TL" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Taesik Lee">
+                            <h4 class="font-bold text-lg">Taesik Lee</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_taesik_lee_title">Head of Department, Industrial & Systems Eng.</p>
+                            <a href="https://csdlab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=MS" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Minjoon Seo">
+                            <h4 class="font-bold text-lg">Minjoon Seo</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_minjoon_seo_title">Assistant Professor, Kim Jaechul Graduate School of AI</p>
+                            <a href="https://seominjoon.github.io/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=KY" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Kuk-jin Yoon">
+                            <h4 class="font-bold text-lg">Kuk-jin Yoon</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_kukjin_yoon_title">Associate Professor, Mechanical Eng.</p>
+                            <a href="https://vi.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=UL" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Uichin Lee">
+                            <h4 class="font-bold text-lg">Uichin Lee</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_uichin_lee_title">Associate Professor, School of Computing</p>
+                            <a href="https://ic.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=YP" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Youngjun Park">
+                            <h4 class="font-bold text-lg">Youngjun Park</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_youngjun_park_title">Research Professor, Center for Advanced Urban Systems</p>
+                             <a href="#" class="text-gray-400 text-sm mt-2 inline-block cursor-not-allowed">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Prof.+B" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
-                        <h4 class="font-bold text-lg">Professor B</h4>
-                        <p class="text-sm text-gray-600" data-lang-key="people_role_2">Lead, Urban Intelligence</p>
+
+                    <!-- Global Scholars -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-8 mt-16" data-lang-key="people_scholars_title">Global Scholars</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=MP" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Maurizio Porfiri">
+                            <h4 class="font-bold text-lg">Maurizio Porfiri</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p>
+                            <a href="https://engineering.nyu.edu/faculty/maurizio-porfiri" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=TY" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Takahiro Yabe">
+                            <h4 class="font-bold text-lg">Takahiro Yabe</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p>
+                            <a href="https://www.takahiro-yabe.com/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=FD" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Fabio Duarte">
+                            <h4 class="font-bold text-lg">Fabio Duarte</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at MIT, Senseable City Lab</p>
+                            <a href="https://senseable.mit.edu/duarte/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
+                        <!-- Profile Card -->
+                        <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
+                            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=KL" class="w-24 h-24 mx-auto rounded-full mb-4" alt="Photo of Kincho Law">
+                            <h4 class="font-bold text-lg">Kincho Law</h4>
+                            <p class="text-sm text-gray-600 mt-1 h-16">Professor of Civil and Environmental Engineering, Stanford University</p>
+                            <a href="https://profiles.stanford.edu/kincho-law" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                                <span data-lang-key="person_website">Website</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Prof.+C" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
-                        <h4 class="font-bold text-lg">Professor C</h4>
-                        <p class="text-sm text-gray-600" data-lang-key="people_role_3">Lead, Digital Infrastructure</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Dr.+D" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
-                        <h4 class="font-bold text-lg">Dr. D</h4>
-                        <p class="text-sm text-gray-600" data-lang-key="people_role_4">Senior Researcher</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="https://placehold.co/400x400/a0aec0/ffffff?text=Dr.+E" class="w-32 h-32 mx-auto rounded-full mb-4 shadow-md" alt="Researcher Photo">
-                        <h4 class="font-bold text-lg">Dr. E</h4>
-                        <p class="text-sm text-gray-600" data-lang-key="people_role_5">Senior Researcher</p>
+
+                    <!-- Students & Staff -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">KAIST Students & Staffs</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-3 text-gray-700">
+                        <div><span class="font-semibold">Hyemin Park</span>, <span data-lang-key="role_researcher">Researcher</span></div>
+                        <div><span class="font-semibold">Sungmin Son</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Suyeon Choi</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Heejae Kim</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Taeyoung Yoon</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Inhyuck Song</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Kanghun Lee</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Byeongguk Jeon</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
                     </div>
                 </div>
-                <p class="mt-12 text-lg text-gray-700" data-lang-key="people_footer">Our center is also home to over 50 talented graduate students and post-doctoral researchers from various disciplines.</p>
             </div>
         </section>
 
@@ -222,32 +342,88 @@
                     </p>
                 </div>
                 <div class="max-w-4xl mx-auto">
-                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6 flex items-start space-x-6 hover:bg-blue-50 transition-colors duration-300">
-                        <div class="text-center border-r border-gray-200 pr-6">
-                            <p class="text-3xl font-bold text-blue-600">25</p>
-                            <p class="text-sm font-medium text-gray-600" data-lang-key="event_1_month">JUL 2025</p>
+                    <!-- Upcoming Events -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6" data-lang-key="events_upcoming_title">Upcoming Events</h3>
+                    <div class="space-y-6">
+                        <!-- Event Item -->
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                                <p class="text-3xl font-bold text-blue-600">31</p>
+                                <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_jul">JUL 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-bold text-xl mb-1" data-lang-key="event_law_title">Seminar: Robotics and Urban Vigilant Project</h3>
+                                <p class="text-gray-600" data-lang-key="event_law_speaker">Guest Speaker: Dr. Kincho Law (Stanford University)</p>
+                            </div>
                         </div>
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-xl mb-1" data-lang-key="event_1_title">Upcoming Seminar: AI in Urban Planning</h3>
-                            <p class="text-gray-600 mb-3" data-lang-key="event_1_speaker">Guest Speaker: Dr. Jane Doe (MIT Senseable City Lab)</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline"><i data-lucide="youtube" class="w-4 h-4 mr-1"></i> <span data-lang-key="event_youtube">Watch on YouTube</span></a>
-                                <a href="#" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline"><i data-lucide="video" class="w-4 h-4 mr-1"></i> <span data-lang-key="event_zoom">Join Zoom</span></a>
+                        <!-- Event Item -->
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                                <p class="text-3xl font-bold text-blue-600">24</p>
+                                <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_jul">JUL 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-bold text-xl mb-1" data-lang-key="event_morio_title">Seminar: Extracting Community Acceptance in Sustainable Energy Transitions</h3>
+                                <p class="text-gray-600" data-lang-key="event_morio_speaker">Guest Speaker: Dr. Gaku Morio (Hitachi America)</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6 flex items-start space-x-6 hover:bg-blue-50 transition-colors duration-300">
-                        <div class="text-center border-r border-gray-200 pr-6">
-                            <p class="text-3xl font-bold text-blue-600">10</p>
-                            <p class="text-sm font-medium text-gray-600" data-lang-key="event_2_month">AUG 2025</p>
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-xl mb-1" data-lang-key="event_2_title">CAUS Monthly Meeting</h3>
-                            <p class="text-gray-600 mb-3" data-lang-key="event_2_topic">Topic: Progress on the Digital Toolkit Project</p>
-                             <div class="flex space-x-4">
-                                <a href="#" class="inline-flex items-center text-sm font-medium text-gray-500"><i data-lucide="info" class="w-4 h-4 mr-1"></i> <span data-lang-key="event_internal">Internal Event</span></a>
+
+                    <!-- Past Seminar Recordings -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="events_recordings_title">Past Seminar Recordings</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Recording Item -->
+                        <a href="https://youtu.be/6BDmRLNJNp4?si=tBc6DuEFLSg699nN" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <div class="relative video-thumbnail">
+                                <img src="https://img.youtube.com/vi/6BDmRLNJNp4/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
+                                    <i data-lucide="play-circle" class="w-16 h-16 text-white"></i>
+                                </div>
                             </div>
-                        </div>
+                            <div class="p-4">
+                                <p class="font-semibold group-hover:text-blue-600" data-lang-key="recording_li_title">[Urban X Seminar - Special Talk] Uncertainty-Aware Air Traffic Management...</p>
+                                <p class="text-sm text-gray-600 mt-1" data-lang-key="recording_li_speaker">Speaker: Prof. Max Li (Univ. Michigan)</p>
+                            </div>
+                        </a>
+                        <!-- Recording Item -->
+                         <a href="https://youtu.be/qRbH-_GiC8U?si=htwUqTdDeCk4wMpf" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <div class="relative video-thumbnail">
+                                <img src="https://img.youtube.com/vi/qRbH-_GiC8U/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
+                                    <i data-lucide="play-circle" class="w-16 h-16 text-white"></i>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="font-semibold group-hover:text-blue-600" data-lang-key="recording_psyllidis_title">[Urban X Seminar] Unlocking new measures and tools for assessing access equity</p>
+                                <p class="text-sm text-gray-600 mt-1" data-lang-key="recording_psyllidis_speaker">Speaker: Prof. Achilleas Psyllidis (TU Delft)</p>
+                            </div>
+                        </a>
+                        <!-- Recording Item -->
+                         <a href="https://youtu.be/juLs2_0QUMU?si=LvKb6jKWkfMDxNMe" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <div class="relative video-thumbnail">
+                                <img src="https://img.youtube.com/vi/juLs2_0QUMU/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
+                                    <i data-lucide="play-circle" class="w-16 h-16 text-white"></i>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="font-semibold group-hover:text-blue-600" data-lang-key="recording_duarte_title">[Urban X Seminar] How data, technology, and design change our cities</p>
+                                <p class="text-sm text-gray-600 mt-1" data-lang-key="recording_duarte_speaker">Speaker: Dr. Fabio Duarte (MIT)</p>
+                            </div>
+                        </a>
+                        <!-- Recording Item -->
+                         <a href="https://youtu.be/D18TnNnS3J0?si=mRZeNyDj-236uEah" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <div class="relative video-thumbnail">
+                                <img src="https://img.youtube.com/vi/D18TnNnS3J0/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
+                                    <i data-lucide="play-circle" class="w-16 h-16 text-white"></i>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="font-semibold group-hover:text-blue-600" data-lang-key="recording_vignon_title">[Urban X Seminar] Safety, Liability, and Insurance for Automated Driving</p>
+                                <p class="text-sm text-gray-600 mt-1" data-lang-key="recording_vignon_speaker">Speaker: Prof. Daniel Vignon (NYU)</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -283,9 +459,9 @@
                 <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
                     <img src="https://placehold.co/150x60/cccccc/999999?text=KAIST" alt="KAIST Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
                     <img src="https://placehold.co/150x60/cccccc/999999?text=GS+E%26C" alt="GS E&C Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=MIT" alt="MIT Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=Stanford" alt="Stanford Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
                     <img src="https://placehold.co/150x60/cccccc/999999?text=NYU" alt="NYU Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=Stanford" alt="Stanford Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://placehold.co/150x60/cccccc/999999?text=MIT" alt="MIT Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
                 </div>
             </div>
         </section>
@@ -318,6 +494,9 @@
             </div>
             <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                 <p data-lang-key="footer_copyright">&copy; 2025 Center for Advanced Urban Systems (CAUS). All Rights Reserved.</p>
+                <p class="mt-2 text-xs text-gray-600" data-lang-key="footer_license">
+                    Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+                </p>
             </div>
         </div>
     </footer>
@@ -361,31 +540,48 @@
                 research_5_title: "Urban Digital Toolkit",
                 research_5_desc: "A toolkit for visualizing and utilizing data, analysis, and reports.",
                 people_title: "Our Team",
-                people_subtitle: "Meet the dedicated faculty and researchers driving our vision forward.",
-                people_role_1: "Director of CAUS",
-                people_role_2: "Lead, Urban Intelligence",
-                people_role_3: "Lead, Digital Infrastructure",
-                people_role_4: "Senior Researcher",
-                people_role_5: "Senior Researcher",
-                people_footer: "Our center is also home to over 50 talented graduate students and post-doctoral researchers from various disciplines.",
+                people_subtitle: "Meet the dedicated faculty, researchers, and students driving our vision forward.",
+                people_professors_title: "KAIST Professors",
+                people_scholars_title: "Global Scholars",
+                people_students_title: "KAIST Students & Staffs",
+                person_website: "Website",
+                person_yoonjin_yoon_title: "Chair Professor, Civil & Environmental Eng. | Director of CAUS",
+                person_changhyun_kwon_title: "Associate Professor, Industrial & Systems Eng. | Vice director of CAUS",
+                person_jinkyu_park_title: "Associate Professor, Industrial & Systems Eng.",
+                person_taesik_lee_title: "Head of Department, Industrial & Systems Eng.",
+                person_minjoon_seo_title: "Assistant Professor, Kim Jaechul Graduate School of AI",
+                person_kukjin_yoon_title: "Associate Professor, Mechanical Eng.",
+                person_uichin_lee_title: "Associate Professor, School of Computing",
+                person_youngjun_park_title: "Research Professor, Center for Advanced Urban Systems",
+                role_researcher: "Researcher",
+                role_doctoral: "Doctoral Student",
+                role_graduate: "Graduate Student",
                 events_title: "News & Events",
                 events_subtitle: "Join our open seminars and stay updated with the latest news from CAUS.",
-                event_1_month: "JUL 2025",
-                event_1_title: "Upcoming Seminar: AI in Urban Planning",
-                event_1_speaker: "Guest Speaker: Dr. Jane Doe (MIT Senseable City Lab)",
-                event_youtube: "Watch on YouTube",
-                event_zoom: "Join Zoom",
-                event_2_month: "AUG 2025",
-                event_2_title: "CAUS Monthly Meeting",
-                event_2_topic: "Topic: Progress on the Digital Toolkit Project",
-                event_internal: "Internal Event",
+                events_upcoming_title: "Upcoming Events",
+                events_recordings_title: "Past Seminar Recordings",
+                event_month_jul: "JUL 2025",
+                event_law_title: "Seminar: Robotics and Urban Vigilant Project",
+                event_law_speaker: "Guest Speaker: Dr. Kincho Law (Stanford University)",
+                event_morio_title: "Seminar: Extracting Community Acceptance in Sustainable Energy Transitions",
+                event_morio_speaker: "Guest Speaker: Dr. Gaku Morio (Hitachi America)",
+                event_watch_youtube: "Watch",
+                recording_li_title: "[Urban X Seminar - Special Talk] Uncertainty-Aware Air Traffic Management...",
+                recording_li_speaker: "Speaker: Prof. Max Li (Univ. Michigan)",
+                recording_psyllidis_title: "[Urban X Seminar] Unlocking new measures and tools for assessing access equity",
+                recording_psyllidis_speaker: "Speaker: Prof. Achilleas Psyllidis (TU Delft)",
+                recording_duarte_title: "[Urban X Seminar] How data, technology, and design change our cities",
+                recording_duarte_speaker: "Speaker: Dr. Fabio Duarte (MIT)",
+                recording_vignon_title: "[Urban X Seminar] Safety, Liability, and Insurance for Automated Driving",
+                recording_vignon_speaker: "Speaker: Prof. Daniel Vignon (NYU)",
                 publications_title: "Featured Publications",
                 publications_subtitle: "A selection of our recent contributions to the field of urban science.",
                 partners_title: "Our Valued Partners & Sponsors",
                 footer_center_name: "Center for Advanced Urban Systems<br>도시 인공지능 연구소",
                 footer_contact: "Contact Us",
                 footer_follow: "Follow Us",
-                footer_copyright: "&copy; 2025 Center for Advanced Urban Systems (CAUS). All Rights Reserved."
+                footer_copyright: "&copy; 2025 Center for Advanced Urban Systems (CAUS). All Rights Reserved.",
+                footer_license: "Except where otherwise noted, content on this site is licensed under a <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank' class='hover:underline'>Creative Commons Attribution 4.0 International license</a>."
             },
             ko: {
                 nav_about: "소개",
@@ -420,31 +616,48 @@
                 research_5_title: "도시 디지털 툴킷",
                 research_5_desc: "데이터, 분석, 리포트 등 시각화 및 활용 toolkit",
                 people_title: "연구팀",
-                people_subtitle: "우리의 비전을 이끌어가는 교수진과 연구원들을 만나보세요.",
-                people_role_1: "센터장",
-                people_role_2: "도시 지능 연구 책임",
-                people_role_3: "디지털 인프라 연구 책임",
-                people_role_4: "선임 연구원",
-                people_role_5: "선임 연구원",
-                people_footer: "저희 센터는 또한 다양한 분야의 50명 이상의 우수한 대학원생 및 박사후 연구원들과 함께하고 있습니다.",
+                people_subtitle: "우리의 비전을 이끌어가는 교수진, 연구원, 학생들을 만나보세요.",
+                people_professors_title: "KAIST 교수진",
+                people_scholars_title: "해외 협력 연구진",
+                people_students_title: "KAIST 연구원 및 학생",
+                person_website: "웹사이트",
+                person_yoonjin_yoon_title: "건설및환경공학과 석좌교수 | CAUS 센터장",
+                person_changhyun_kwon_title: "산업및시스템공학과 부교수 | CAUS 부센터장",
+                person_jinkyu_park_title: "산업및시스템공학과 부교수",
+                person_taesik_lee_title: "산업및시스템공학과 학과장",
+                person_minjoon_seo_title: "김재철AI대학원 조교수",
+                person_kukjin_yoon_title: "기계공학과 부교수",
+                person_uichin_lee_title: "전산학부 부교수",
+                person_youngjun_park_title: "도시인공지능연구소 연구교수",
+                role_researcher: "연구원",
+                role_doctoral: "박사과정",
+                role_graduate: "석사과정",
                 events_title: "소식 및 행사",
                 events_subtitle: "공개 세미나에 참여하고 CAUS의 최신 소식을 받아보세요.",
-                event_1_month: "2025년 7월",
-                event_1_title: "다가오는 세미나: 도시 계획에서의 AI",
-                event_1_speaker: "초청 연사: 제인 도 박사 (MIT 센서블 시티 랩)",
-                event_youtube: "YouTube에서 시청",
-                event_zoom: "Zoom으로 참여",
-                event_2_month: "2025년 8월",
-                event_2_title: "CAUS 월간 회의",
-                event_2_topic: "주제: 디지털 툴킷 프로젝트 진행 상황",
-                event_internal: "내부 행사",
+                events_upcoming_title: "다가오는 행사",
+                events_recordings_title: "지난 세미나 영상",
+                event_month_jul: "2025년 7월",
+                event_law_title: "세미나: 로보틱스와 도시 감시 프로젝트",
+                event_law_speaker: "초청 연사: 킨초 로 박사 (스탠포드 대학교)",
+                event_morio_title: "세미나: 지속가능한 에너지 전환에서 커뮤니티 수용성 추출",
+                event_morio_speaker: "초청 연사: 가쿠 모리오 박사 (히타치 아메리카)",
+                event_watch_youtube: "시청하기",
+                recording_li_title: "[Urban X 세미나 - 특별 강연] 현재와 미래 공역 진입자를 위한 불확실성 인지 항공 교통 관리",
+                recording_li_speaker: "연사: 맥스 리 교수 (미시간 대학교 조교수)",
+                recording_psyllidis_title: "[Urban X 세미나] 접근 형평성 평가를 위한 새로운 측정 및 도구 잠금 해제",
+                recording_psyllidis_speaker: "연사: 아킬레아스 실리디스 교수 (델프트 공과대학교 조교수)",
+                recording_duarte_title: "[Urban X 세미나] 데이터, 기술, 디자인이 우리 도시를 바꾸는 방법",
+                recording_duarte_speaker: "연사: 파비오 두아르테 박사 (MIT 센서블 시티 랩 부소장)",
+                recording_vignon_title: "[Urban X 세미나] 자율 주행을 위한 안전, 책임 및 보험",
+                recording_vignon_speaker: "연사: 다니엘 비뇽 교수 (뉴욕 대학교 토목 및 도시 공학 조교수)",
                 publications_title: "주요 연구 실적",
                 publications_subtitle: "도시 과학 분야에 대한 저희의 최근 기여를 소개합니다.",
                 partners_title: "주요 파트너 및 후원사",
                 footer_center_name: "도시 인공지능 연구소<br>Center for Advanced Urban Systems",
                 footer_contact: "연락처",
                 footer_follow: "소셜 미디어",
-                footer_copyright: "&copy; 2025 도시 인공지능 연구소 (CAUS). 모든 권리 보유."
+                footer_copyright: "&copy; 2025 도시 인공지능 연구소 (CAUS). 모든 권리 보유.",
+                footer_license: "달리 명시되지 않은 한, 이 사이트의 콘텐츠는 <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank' class='hover:underline'>크리에이티브 커먼즈 저작자표시 4.0 국제 라이선스</a>에 따라 사용이 허가됩니다."
             }
         };
 
@@ -492,7 +705,7 @@
 
         // --- Header Scroll Effect ---
         const header = document.getElementById('header');
-        const logo = document.getElementById('logo');
+        const logoImg = document.getElementById('caus-logo-img');
         const navLinks = header.querySelectorAll('nav a');
         const langSwitcher = document.getElementById('lang-switcher');
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -500,9 +713,8 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.classList.add('bg-white', 'shadow-md', 'py-2');
-                header.classList.remove('py-4');
-                logo.classList.remove('text-white');
-                logo.classList.add('text-gray-900');
+                header.classList.remove('py-3');
+                header.classList.add('scrolled');
                 navLinks.forEach(link => {
                     link.classList.remove('nav-link');
                     link.classList.add('nav-link-scrolled');
@@ -516,9 +728,8 @@
                 mobileMenuButton.classList.add('text-gray-900');
             } else {
                 header.classList.remove('bg-white', 'shadow-md', 'py-2');
-                header.classList.add('py-4');
-                logo.classList.add('text-white');
-                logo.classList.remove('text-gray-900');
+                header.classList.add('py-3');
+                header.classList.remove('scrolled');
                 navLinks.forEach(link => {
                     link.classList.add('nav-link');
                     link.classList.remove('nav-link-scrolled');
