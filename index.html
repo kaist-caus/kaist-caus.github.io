@@ -98,10 +98,10 @@
                 </nav>
                 <div class="flex items-center">
                     <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4">
-                        <button id="lang-en" class="lang-btn active">EN</button>
-                        <button id="lang-ko" class="lang-btn">KO</button>
+                        <button id="lang-en" class="lang-btn active" type="button" onclick="window.changeLanguage && window.changeLanguage('en')">EN</button>
+                        <button id="lang-ko" class="lang-btn" type="button" onclick="window.changeLanguage && window.changeLanguage('ko')">KO</button>
                     </div>
-                     <button id="mobile-menu-button" class="md:hidden text-white">
+                    <button id="mobile-menu-button" class="md:hidden text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
@@ -119,8 +119,8 @@
             <a href="#publications" class="text-white text-2xl font-bold mb-6" data-lang-key="nav_publications_mobile">PUBLICATIONS</a>
             <a href="#contact" class="text-white text-2xl font-bold mb-12" data-lang-key="nav_contact_mobile">CONTACT</a>
             <div class="flex items-center space-x-4">
-                <button id="lang-en-mobile" class="text-white text-lg font-semibold border-2 border-white rounded-md px-4 py-1">EN</button>
-                <button id="lang-ko-mobile" class="text-white text-lg font-semibold border-2 border-transparent rounded-md px-4 py-1">KO</button>
+                <button id="lang-en-mobile" class="text-white text-lg font-semibold border-2 border-white rounded-md px-4 py-1" type="button" onclick="window.changeLanguage && window.changeLanguage('en')">EN</button>
+                <button id="lang-ko-mobile" class="text-white text-lg font-semibold border-2 border-transparent rounded-md px-4 py-1" type="button" onclick="window.changeLanguage && window.changeLanguage('ko')">KO</button>
             </div>
         </div>
     </div>
