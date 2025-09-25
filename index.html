@@ -790,6 +790,8 @@
             }
     });
 
+    window.changeLanguage = changeLanguage;
+
     setLangButtons(lang);
     localStorage.setItem('siteLang', lang);
     };
@@ -799,6 +801,16 @@
     document.getElementById('lang-ko')?.addEventListener('click', () => changeLanguage('ko'));
     document.getElementById('lang-en-mobile')?.addEventListener('click', () => changeLanguage('en'));
     document.getElementById('lang-ko-mobile')?.addEventListener('click', () => changeLanguage('ko'));
+
+    // 신규(25.9.25.) - 바디 단위 클릭 리스너
+    document.body.addEventListener('click', (e) => {
+        const en = e.target.closest('#lang-en');
+        const ko = e.target.closest('#lang-ko');
+        const enM = e.target.closest('#lang-en-mobile');
+        const koM = e.target.closest('#lang-ko-mobile');
+        if (en || enM) { e.preventDefault(); window.changeLanguage('en'); }
+        if (ko || koM) { e.preventDefault(); window.changeLanguage('ko'); }
+    });
 
     // --- Header Scroll Effect ---
     const header = document.getElementById('header');
