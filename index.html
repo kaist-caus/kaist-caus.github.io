@@ -97,7 +97,7 @@
                     <a href="#contact" class="nav-link" data-lang-key="nav_contact">CONTACT</a>
                 </nav>
                 <div class="flex items-center">
-                    <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4">
+                    <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4" style="z-index:9999"> <!-- 클릭 겹침 예방용-->
                         <button id="lang-en" class="lang-btn active" type="button" onclick="window.changeLanguage && window.changeLanguage('en')">EN</button>
                         <button id="lang-ko" class="lang-btn" type="button" onclick="window.changeLanguage && window.changeLanguage('ko')">KO</button>
                     </div>
