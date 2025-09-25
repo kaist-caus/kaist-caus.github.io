@@ -788,13 +788,13 @@
             if (translations[lang] && translations[lang][key]) {
                 el.innerHTML = translations[lang][key];
             }
-    });
+        });
+
+        setLangButtons(lang);
+        localStorage.setItem('siteLang', lang);
+    };
 
     window.changeLanguage = changeLanguage;
-
-    setLangButtons(lang);
-    localStorage.setItem('siteLang', lang);
-    };
 
     // Listeners
     document.getElementById('lang-en')?.addEventListener('click', () => changeLanguage('en'));
