@@ -605,12 +605,6 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        console.log("CAUS website script loaded and ready.");
-
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
         // --- Language Translation ---
         const translations = {
             en: {
@@ -795,6 +789,15 @@
     };
 
     window.changeLanguage = changeLanguage;
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        console.log("CAUS website script loaded and ready.");
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+    // changeLanguage 위치 수정(25.9.26.)
 
     // Listeners
     document.getElementById('lang-en')?.addEventListener('click', () => changeLanguage('en'));
