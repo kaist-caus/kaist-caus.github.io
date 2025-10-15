@@ -76,6 +76,36 @@
         .video-thumbnail:hover .video-thumbnail-overlay {
             opacity: 1;
         }
+        /* Fixed Header 색상 변경 */
+        #header {
+            background-color: #001633; /* 깊은 네이비 */
+            color: white;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 스크롤 시(white header로 바뀌는 경우) 색상 조정 */
+        #header.scrolled {
+            background-color: #ffffff; /* 흰색 헤더 */
+            color: #001633;
+        }
+
+        /* nav 링크 색상 조정 */
+        #header .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        #header.scrolled .nav-link {
+            color: #001633;
+        }
+
+        /* 언어 버튼 */
+        #header .lang-btn {
+            color: white;
+            border-color: rgba(255,255,255,0.3);
+        }
+        #header.scrolled .lang-btn {
+            color: #001633;
+            border-color: #d1d5db;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -245,7 +275,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Yoonjin Yoon">
                             <h4 class="font-bold text-lg">Yoonjin Yoon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Chair Professor, Civil & Environmental Eng. | Director of CAUS</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Professor, Civil & Environmental Eng. | Director of CAUS</p>
                             <a href="https://spacetime.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -254,7 +284,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_kwon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Changhyun Kwon">
                             <h4 class="font-bold text-lg">Changhyun Kwon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_changhyun_kwon_title">Associate Professor, Industrial & Systems Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_changhyun_kwon_title">Professor, Industrial & Systems Eng.</p>
                             <a href="https://comet.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -263,7 +293,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_jinkyu_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Jinkyu Park">
                             <h4 class="font-bold text-lg">Jinkyu Park</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Associate Professor, Industrial & Systems Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Professor, Industrial & Systems Eng.</p>
                             <a href="http://silab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -272,7 +302,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_taesik_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Taesik Lee">
                             <h4 class="font-bold text-lg">Taesik Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_taesik_lee_title">Head of Department, Industrial & Systems Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_taesik_lee_title">Professor, Industrial & Systems Eng.</p>
                             <a href="https://csdlab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -281,7 +311,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_dongman_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Dongman Lee">
                             <h4 class="font-bold text-lg">Dongman Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_dongman_lee_title">Associate Professor, School of Computing</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_dongman_lee_title">Professor, School of Computing</p>
                             <a href="https://cds.kaist.ac.kr/"  target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -290,7 +320,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_kukjin_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kuk-jin Yoon">
                             <h4 class="font-bold text-lg">Kuk-jin Yoon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_kukjin_yoon_title">Associate Professor, Mechanical Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_kukjin_yoon_title">Professor, Mechanical Eng.</p>
                             <a href="https://vi.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -299,7 +329,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_minjun_seo.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Minjoon Seo">
                             <h4 class="font-bold text-lg">Minjoon Seo</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_minjoon_seo_title">Assistant Professor, Kim Jaechul Graduate School of AI</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_minjoon_seo_title">Professor, Kim Jaechul Graduate School of AI</p>
                             <a href="https://seominjoon.github.io/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -308,7 +338,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_uichin_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Uichin Lee">
                             <h4 class="font-bold text-lg">Uichin Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_uichin_lee_title">Associate Professor, School of Computing</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_uichin_lee_title">Professor, School of Computing</p>
                             <a href="https://ic.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -317,7 +347,7 @@
                         <!-- <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_youngjun_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Youngjun Park">
                             <h4 class="font-bold text-lg">Youngjun Park</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_youngjun_park_title">Research Professor, Center for Advanced Urban Systems</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_youngjun_park_title">Professor, Center for Advanced Urban Systems</p>
                              <a href="https://youngjour.github.io/" target = "_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -700,14 +730,14 @@
                 people_scholars_title: "Global Scholars",
                 people_students_title: "KAIST Students & Staff",
                 person_website: "Website",
-                person_yoonjin_yoon_title: "Chair Professor, Civil & Environmental Eng. | Director of CAUS",
-                person_changhyun_kwon_title: "Associate Professor, Industrial & Systems Eng.",
-                person_jinkyu_park_title: "Associate Professor, Industrial & Systems Eng.",
-                person_taesik_lee_title: "Head of Department, Industrial & Systems Eng.",
-                person_dongman_lee_title: "Associate Professor, School of Computing",
-                person_kukjin_yoon_title: "Associate Professor, Mechanical Eng.",
-                person_minjoon_seo_title: "Assistant Professor, Kim Jaechul Graduate School of AI",
-                person_uichin_lee_title: "Associate Professor, School of Computing",
+                person_yoonjin_yoon_title: "Professor, Civil & Environmental Eng. | Director of CAUS",
+                person_changhyun_kwon_title: "Professor, Industrial & Systems Eng.",
+                person_jinkyu_park_title: "Professor, Industrial & Systems Eng.",
+                person_taesik_lee_title: "Professor, Industrial & Systems Eng.",
+                person_dongman_lee_title: "Professor, School of Computing",
+                person_kukjin_yoon_title: "Professor, Mechanical Eng.",
+                person_minjoon_seo_title: "Professor, Kim Jaechul Graduate School of AI",
+                person_uichin_lee_title: "Professor, School of Computing",
                 role_researcher: "Researcher",
                 role_doctoral: "Doctoral Student",
                 role_graduate: "Graduate Student",
@@ -934,6 +964,12 @@
 
     const handleHeaderScroll = () => {
         if (window.scrollY > 50) {
+            header.classList.add('scrolled', 'shadow-md');
+        } else {
+            header.classList.remove('scrolled', 'shadow-md');
+        }
+        /*
+        if (window.scrollY > 50) {
             header.classList.add('bg-white', 'shadow-md');
             header.classList.remove('py-3'); header.classList.add('py-2');
             logo.classList.remove('p-2','bg-white/90','rounded-md');
@@ -950,6 +986,7 @@
             langSwitcher.querySelectorAll('button').forEach(btn => btn.classList.remove('lang-btn-scrolled'));
             mobileMenuButton.classList.add('text-white'); mobileMenuButton.classList.remove('text-gray-900');
         }
+        */
       };
 
         // Mobile menu
