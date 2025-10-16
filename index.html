@@ -76,6 +76,36 @@
         .video-thumbnail:hover .video-thumbnail-overlay {
             opacity: 1;
         }
+        /* Fixed Header 색상 변경 */
+        #header {
+            background-color: #182c47;
+            color: #ffffff;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 스크롤 시(white header로 바뀌는 경우) 색상 조정 */
+        #header.scrolled {
+            background-color: #ffffff; /* 흰색 헤더 */
+            color: #182c47;
+        }
+
+        /* nav 링크 색상 조정 */
+        #header .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        #header.scrolled .nav-link {
+            color: #182c47;
+        }
+
+        /* 언어 버튼 */
+        #header .lang-btn {
+            color: white;
+            border-color: rgba(255,255,255,0.3);
+        }
+        #header.scrolled .lang-btn {
+            color: #001633;
+            border-color: #d1d5db;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -86,7 +116,7 @@
             <div class="flex justify-between items-center">
                 <!-- CAUS Logo -->
                 <a href="#" id="logo" class="transition-all duration-300">
-                    <img id="caus-logo-img" src="img/logo_caus.png" alt="CAUS Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/120x40/001633/ffffff?text=CAUS';">
+                    <img id="caus-logo-img" src="/img/logo_caus.png" alt="CAUS Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/120x40/001633/ffffff?text=CAUS';">
                 </a>
                 <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                     <a href="#about" class="nav-link" data-lang-key="nav_about">ABOUT</a>
@@ -243,81 +273,81 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Yoonjin Yoon">
+                            <img src="/img/profile_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Yoonjin Yoon">
                             <h4 class="font-bold text-lg">Yoonjin Yoon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Chair Professor, Civil & Environmental Eng. | Director of CAUS</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Professor, Civil & Environmental Eng. | Director of CAUS</p>
                             <a href="https://spacetime.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_kwon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Changhyun Kwon">
+                            <img src="/img/profile_kwon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Changhyun Kwon">
                             <h4 class="font-bold text-lg">Changhyun Kwon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_changhyun_kwon_title">Associate Professor, Industrial & Systems Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_changhyun_kwon_title">Professor, Industrial & Systems Eng.</p>
                             <a href="https://comet.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_jinkyu_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Jinkyu Park">
+                            <img src="/img/profile_jinkyu_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Jinkyu Park">
                             <h4 class="font-bold text-lg">Jinkyu Park</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Associate Professor, Industrial & Systems Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Professor, Industrial & Systems Eng.</p>
                             <a href="http://silab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_taesik_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Taesik Lee">
+                            <img src="/img/profile_taesik_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Taesik Lee">
                             <h4 class="font-bold text-lg">Taesik Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_taesik_lee_title">Head of Department, Industrial & Systems Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_taesik_lee_title">Professor, Industrial & Systems Eng.</p>
                             <a href="https://csdlab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_dongman_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Dongman Lee">
+                            <img src="/img/profile_dongman_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Dongman Lee">
                             <h4 class="font-bold text-lg">Dongman Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_dongman_lee_title">Associate Professor, School of Computing</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_dongman_lee_title">Professor, School of Computing</p>
                             <a href="https://cds.kaist.ac.kr/"  target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_kukjin_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kuk-jin Yoon">
+                            <img src="/img/profile_kukjin_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kuk-jin Yoon">
                             <h4 class="font-bold text-lg">Kuk-jin Yoon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_kukjin_yoon_title">Associate Professor, Mechanical Eng.</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_kukjin_yoon_title">Professor, Mechanical Eng.</p>
                             <a href="https://vi.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_minjun_seo.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Minjoon Seo">
+                            <img src="/img/profile_minjun_seo.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Minjoon Seo">
                             <h4 class="font-bold text-lg">Minjoon Seo</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_minjoon_seo_title">Assistant Professor, Kim Jaechul Graduate School of AI</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_minjoon_seo_title">Professor, Kim Jaechul Graduate School of AI</p>
                             <a href="https://seominjoon.github.io/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_uichin_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Uichin Lee">
+                            <img src="/img/profile_uichin_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Uichin Lee">
                             <h4 class="font-bold text-lg">Uichin Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_uichin_lee_title">Associate Professor, School of Computing</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_uichin_lee_title">Professor, School of Computing</p>
                             <a href="https://ic.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                         <!-- Profile Card -->
                         <!-- <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_youngjun_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Youngjun Park">
+                            <img src="/img/profile_youngjun_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Youngjun Park">
                             <h4 class="font-bold text-lg">Youngjun Park</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_youngjun_park_title">Research Professor, Center for Advanced Urban Systems</p>
+                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_youngjun_park_title">Professor, Center for Advanced Urban Systems</p>
                              <a href="https://youngjour.github.io/" target = "_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -329,7 +359,7 @@
                      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_mau.png" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Maurizio Porfiri">
+                            <img src="/img/profile_mau.png" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Maurizio Porfiri">
                             <h4 class="font-bold text-lg">Maurizio Porfiri</h4>
                             <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p>
                             <a href="https://engineering.nyu.edu/faculty/maurizio-porfiri" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
@@ -338,7 +368,7 @@
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_taka.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Takahiro Yabe">
+                            <img src="/img/profile_taka.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Takahiro Yabe">
                             <h4 class="font-bold text-lg">Takahiro Yabe</h4>
                             <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p>
                             <a href="https://engineering.nyu.edu/faculty/takahiro-yabe" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
@@ -347,7 +377,7 @@
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_duarte_ fabio.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Fabio Duarte">
+                            <img src="/img/profile_duarte_ fabio.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Fabio Duarte">
                             <h4 class="font-bold text-lg">Fabio Duarte</h4>
                             <p class="text-sm text-gray-600 mt-1 h-16">Professor at MIT, Senseable City Lab</p>
                             <a href="https://senseable.mit.edu/duarte/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
@@ -356,7 +386,7 @@
                         </div>
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
-                            <img src="img/profile_kincho_h_law.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kincho Law">
+                            <img src="/img/profile_kincho_h_law.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kincho Law">
                             <h4 class="font-bold text-lg">Kincho Law</h4>
                             <p class="text-sm text-gray-600 mt-1 h-16">Professor at Stanford Univ., Civil and Environmental Engineering</p>
                             <a href="https://profiles.stanford.edu/kincho-law" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
@@ -370,7 +400,7 @@
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 text-gray-700">
                         <div><span class="font-semibold">Youngjun Park</span>, <span data-lang-key="role_researcher">Postdoc</span></div>
                         <div><span class="font-semibold">Jiwon Park</span>, <span data-lang-key="role_researcher">Researcher</span></div>
-                        <div><span class="font-semibold">Hyemin Park</span>, <span data-lang-key="role_researcher">Researcher</span></div>
+                        <!-- <div><span class="font-semibold">Hyemin Park</span>, <span data-lang-key="role_researcher">Researcher</span></div> -->
                         <div><span class="font-semibold">Sungmin Son</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Suyeon Choi</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Heejae Kim</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
@@ -398,6 +428,54 @@
                     <!-- <div class="space-y-6"> -->
                     <div class="grid grid-cols-1 gap-6">
 
+                        <!-- 10/23 GS UAM Meeting -->
+                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                              <p class="text-3xl font-bold text-blue-600">23</p>
+                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_gs_uam_title">GS UAM Research Meeting</h3>
+                              <!-- <p class="text-gray-600" data-lang-key="event_gs_uam_desc">Working session with GS UAM partners.</p> -->
+                            </div>
+                          </div>
+                        
+                          <!-- 10/16 CAUS 연구진 월례 회의 -->
+                          <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                              <p class="text-3xl font-bold text-blue-600">16</p>
+                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_caus_monthly_title">CAUS Monthly Meeting</h3>
+                              <!-- <p class="text-gray-600" data-lang-key="event_caus_monthly_desc">Internal monthly research updates & planning.</p> -->
+                            </div>
+                          </div>
+                        
+                          <!-- 10/16 VIGILANT Kick-off Meeting -->
+                          <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                              <p class="text-3xl font-bold text-blue-600">16</p>
+                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_vigilant_kickoff_title">VIGILANT Kick-off Meeting</h3>
+                              <!-- <p class="text-gray-600" data-lang-key="event_vigilant_kickoff_desc">Project kickoff: moving robot–based urban sensing.</p> -->
+                            </div>
+                          </div>
+                        
+                          <!-- 10/15 PRISM-X 주간 회의 -->
+                          <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                              <p class="text-3xl font-bold text-blue-600">15</p>
+                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_prismx_weekly_title">PRISM-X Weekly Meeting</h3>
+                              <!-- <p class="text-gray-600" data-lang-key="event_prismx_weekly_desc">Weekly check-in on PRISM-X tasks & milestones.</p> -->
+                            </div>
+                          </div>
+
                         <!-- Event Item -->
                         <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
@@ -405,8 +483,8 @@
                                 <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_nov_2025">NOV 2025</p>
                             </div>
                             <div class="flex-grow">
-                                <h3 class="font-bold text-xl mb-2" data-lang-key="event_hcfm_title">CAUS-HcFM Workshop</h3>
-                                <p class="text-gray-700" data-lang-key="event_hcfm_desc">A two-day workshop focusing on collaborative research and agent-based urban simulations</p>
+                                <h3 class="font-bold text-xl mb-2" data-lang-key="event_hcfm_title">Urban X - HcFM Workshop @Berkeley</h3>
+                                <p class="text-gray-700" data-lang-key="event_hcfm_desc">A two-day workshop focusing on Urban Air Mobility and Urban AI</p>
                             </div>
                         </div>
                         <!-- Event Item -->
@@ -454,6 +532,10 @@
                             </div>
                         </div> -->
                     </div>
+
+                    <!-- News Section -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="news_title">News</h3>
+                      <p class="section-subtitle !mb-8" data-lang-key="news_subtitle">Latest announcements and updates from CAUS.</p>
 
                     <!-- Past Seminar Recordings -->
                     <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="events_recordings_title">Past Seminar & Lecture Recordings</h3>
@@ -526,7 +608,7 @@
                 </div>
                 <div class="max-w-4xl mx-auto space-y-6">
                     <div class="p-4 border-l-4 border-blue-600">
-                        <p class="text-lg font-medium text-gray-800">Park, Y. Na, J., & Yoon, Y. (xxxx). "Food Deserts in Context: How Site-Specific Factors Reshape Food Deserts Discussion." <span class="italic">npj Urban Sutainability (in review)</span></p>
+                        <p class="text-lg font-medium text-gray-800">Yun, T., Shin, Y., Song, I., & Park, J. (2025). Traffic network layout optimization with diffusion models. <span class="italic">Proceedings of the TSL 2025 Conference Workshop.</span></p>
                     </div>
                     <!-- <div class="p-4 border-l-4 border-blue-600">
                         <p class="text-lg font-medium text-gray-800">Choi, H., & Doe, J. (2024). "Predicting Pedestrian Flow with Graph Convolutional Networks." <span class="italic">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 8</span>(4), 1-25.</p>
@@ -543,11 +625,11 @@
             <div class="container mx-auto px-6">
                 <h3 class="text-center text-lg font-semibold text-gray-600 mb-8" data-lang-key="partners_title">Our Valued Partners & Sponsors</h3>
                 <div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
-                    <img src="img/kaist_logo.png" alt="KAIST Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
-                    <img src="img/NYU logo.jpg" alt="NYU Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
-                    <img src="img/stanford-university-logo.png" alt="Stanford Logo" class="h-8 grayscale hover:grayscale-0 transition-all">
-                    <img src="img/MIT_logo.png" alt="MIT Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
-                    <img src="img/GS logo.jpg" alt="GS E&C Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/kaist_logo.png" alt="KAIST Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/NYU logo.jpg" alt="NYU Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/stanford-university-logo.png" alt="Stanford Logo" class="h-8 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/MIT_logo.png" alt="MIT Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/GS logo.jpg" alt="GS E&C Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
                 </div>
             </div>
         </section>
@@ -648,14 +730,14 @@
                 people_scholars_title: "Global Scholars",
                 people_students_title: "KAIST Students & Staff",
                 person_website: "Website",
-                person_yoonjin_yoon_title: "Chair Professor, Civil & Environmental Eng. | Director of CAUS",
-                person_changhyun_kwon_title: "Associate Professor, Industrial & Systems Eng.",
-                person_jinkyu_park_title: "Associate Professor, Industrial & Systems Eng.",
-                person_taesik_lee_title: "Head of Department, Industrial & Systems Eng.",
-                person_dongman_lee_title: "Associate Professor, School of Computing",
-                person_kukjin_yoon_title: "Associate Professor, Mechanical Eng.",
-                person_minjoon_seo_title: "Assistant Professor, Kim Jaechul Graduate School of AI",
-                person_uichin_lee_title: "Associate Professor, School of Computing",
+                person_yoonjin_yoon_title: "Professor, Civil & Environmental Eng. | Director of CAUS",
+                person_changhyun_kwon_title: "Professor, Industrial & Systems Eng.",
+                person_jinkyu_park_title: "Professor, Industrial & Systems Eng.",
+                person_taesik_lee_title: "Professor, Industrial & Systems Eng.",
+                person_dongman_lee_title: "Professor, School of Computing",
+                person_kukjin_yoon_title: "Professor, Mechanical Eng.",
+                person_minjoon_seo_title: "Professor, Kim Jaechul Graduate School of AI",
+                person_uichin_lee_title: "Professor, School of Computing",
                 role_researcher: "Researcher",
                 role_doctoral: "Doctoral Student",
                 role_graduate: "Graduate Student",
@@ -665,8 +747,21 @@
                 events_recordings_title: "Past Seminar Recordings",
                 event_month_nov_2025: "NOV 2025",   // ← 신규
                 event_month_mar_2026: "MAR 2026",   // ← 신규
-                event_hcfm_title: "CAUS-HcFM Workshop",
-                event_hcfm_desc: "A two-day workshop focusing on collaborative research and agent-based urban simulations",
+                event_hcfm_title: "Urban X - HcFM Workshop @Berkeley",
+                event_hcfm_desc: "A two-day workshop focusing on Urban Air Mobility and Urban AI",
+                event_month_oct_2025: "OCT 2025",
+                event_gs_uam_title: "GS UAM Research Meeting",
+                // event_gs_uam_desc: "Working session with GS UAM partners.",
+                event_caus_monthly_title: "CAUS Monthly Meeting",
+                // event_caus_monthly_desc: "Internal monthly research updates & planning.",
+                event_vigilant_kickoff_title: "VIGILANT Kick-off Meeting",
+                // event_vigilant_kickoff_desc: "Project kickoff: moving robot–based urban sensing.",
+                event_prismx_weekly_title: "PRISM-X Weekly Meeting",
+                // event_prismx_weekly_desc: "Weekly check-in on PRISM-X tasks & milestones.",
+                
+                news_title: "News",
+                news_subtitle: "Latest announcements and updates from CAUS.",
+                
                 event_caus_conf_title: "CAUS Annual Conference",
                 event_caus_conf_desc: "A conference featuring keynote talks, panels, and demos on Urban AI (date TBA)",
                 recording_li_title: "[Urban X Seminar - Special Talk] Uncertainty-Aware Air Traffic Management...",
@@ -751,14 +846,27 @@
                 role_graduate: "석사과정",
                 events_title: "소식 및 행사",
                 events_subtitle: "공개 세미나에 참여하고 CAUS의 최신 소식을 받아보세요.",
-                events_upcoming_title: "다가오는 행사",
+                events_upcoming_title: "앞으로의 일정",
                 events_recordings_title: "지난 세미나 영상",
                 event_month_nov_2025: "2025년 11월",
                 event_month_mar_2026: "2026년 3월",
-                event_hcfm_title: "CAUS-HcFM 워크숍",
-                event_hcfm_desc: "공동 연구 및 에이전트 기반 도시 시뮬레이션을 주제로 한 2일 워크숍",
+                event_hcfm_title: "Urban X - HcFM 워크숍 (Berkeley, US)",
+                event_hcfm_desc: "Urban Air Mobility와 Urban AI를 주제로 한 2일의 워크숍 (UC Berkeley)",
                 event_caus_conf_title: "CAUS 연례 컨퍼런스",
                 event_caus_conf_desc: "도시 AI를 주제로 키노트, 패널, 데모가 진행되는 컨퍼런스 (일자 추후 공지)",
+                event_month_oct_2025: "2025년 10월",
+                event_gs_uam_title: "GS UAM 연구 미팅",
+                // event_gs_uam_desc: "GS UAM 파트너사와의 업무 회의.",
+                event_caus_monthly_title: "CAUS 연구진 월례 회의",
+                // event_caus_monthly_desc: "월간 연구 진행 상황 공유 및 계획 수립.",
+                event_vigilant_kickoff_title: "VIGILANT 킥오프 미팅",
+                // event_vigilant_kickoff_desc: "무인이동체 기반 도시 센싱 프로젝트 착수 회의.",
+                event_prismx_weekly_title: "PRISM-X 주간 회의",
+                // event_prismx_weekly_desc: "주간 업무 점검 및 마일스톤 공유.",
+                
+                news_title: "소식",
+                news_subtitle: "CAUS의 최신 공지와 업데이트를 확인하세요.",
+                
                 recording_li_title: "[Urban X 세미나 - 특별 강연] 현재와 미래 공역 진입자를 위한 불확실성 인지 항공 교통 관리",
                 recording_li_speaker: "연사: 맥스 리 교수 (미시간 대학교 조교수)",
                 recording_psyllidis_title: "[Urban X 세미나] 접근 형평성 평가를 위한 새로운 측정 및 도구 잠금 해제",
@@ -856,6 +964,12 @@
 
     const handleHeaderScroll = () => {
         if (window.scrollY > 50) {
+            header.classList.add('scrolled', 'shadow-md');
+        } else {
+            header.classList.remove('scrolled', 'shadow-md');
+        }
+        /*
+        if (window.scrollY > 50) {
             header.classList.add('bg-white', 'shadow-md');
             header.classList.remove('py-3'); header.classList.add('py-2');
             logo.classList.remove('p-2','bg-white/90','rounded-md');
@@ -872,6 +986,7 @@
             langSwitcher.querySelectorAll('button').forEach(btn => btn.classList.remove('lang-btn-scrolled'));
             mobileMenuButton.classList.add('text-white'); mobileMenuButton.classList.remove('text-gray-900');
         }
+        */
       };
 
         // Mobile menu
