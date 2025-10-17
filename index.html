@@ -115,8 +115,12 @@
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <!-- CAUS Logo -->
-                <a href="#" id="logo" class="transition-all duration-300">
+                <a href="/" id="logo" class="transition-all duration-300">
                     <img id="caus-logo-img" src="/img/logo_caus.png" alt="CAUS Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/120x40/001633/ffffff?text=CAUS';">
+                    <div class="hidden sm:block leading-tight">
+                        <div class="text-white font-semibold text-sm md:text-base" data-lang-key="brand_line1">Center for Advanced Urban Systems</div>
+                        <div class="text-gray-200 text-xs md:text-sm" data-lang-key="brand_line2">KAIST 도시인공지능연구소</div>
+                    </div>
                 </a>
                 <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                     <a href="#about" class="nav-link" data-lang-key="nav_about">ABOUT</a>
@@ -261,7 +265,7 @@
         <section id="people" class="py-20 lg:py-32 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Team</h2>
+                    <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Member</h2>
                     <p class="section-subtitle" data-lang-key="people_subtitle">
                         Meet the dedicated faculty, researchers, and students driving our vision forward.
                     </p>
@@ -395,19 +399,25 @@
                         </div>
                     </div>
 
-                    <!-- Students & Staff -->
-                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">Students & Staff</h3>
+                    <!-- Students & Researchers -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">Students & Researchers</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 text-gray-700">
                         <div><span class="font-semibold">Youngjun Park</span>, <span data-lang-key="role_researcher">Postdoc</span></div>
                         <div><span class="font-semibold">Jiwon Park</span>, <span data-lang-key="role_researcher">Researcher</span></div>
-                        <!-- <div><span class="font-semibold">Hyemin Park</span>, <span data-lang-key="role_researcher">Researcher</span></div> -->
-                        <div><span class="font-semibold">Sungmin Son</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Suyeon Choi</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Heejae Kim</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Taeyoung Yoon</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Inhyuck Song</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
                         <div><span class="font-semibold">Kanghun Lee</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Byeongguk Jeon</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Keonhee Jang</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Minwoo Jeong</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Seungro Lee</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Jihye Na</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Nhat Quang Tau</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Thi Thao Vy Bui</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Byeongin Jeong</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Youngho Kim</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Matthew Sato</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                     </div>
                 </div>
             </div>
@@ -724,11 +734,11 @@
                 research_5_title: "Urban Digital Toolkit",
                 research_5_desc_short: "A toolkit for visualizing and utilizing data, analysis, and reports.",
                 research_5_details: `<li>Interactive data visualization modules.</li><li>Analysis content mapping modules.</li><li>Natural language-based simulation modules.</li><li>Natural language-based knowledge bank Q&A modules.</li><li>Urban planning and design modules.</li><li>Defining resources and partners for platform development based on the toolkit.</li>`,
-                people_title: "Our Team",
+                people_title: "Our Member",
                 people_subtitle: "Meet the dedicated faculty, researchers, and students driving our vision forward.",
                 people_professors_title: "KAIST Professors",
                 people_scholars_title: "Global Scholars",
-                people_students_title: "KAIST Students & Staff",
+                people_students_title: "KAIST Students & Researchers",
                 person_website: "Website",
                 person_yoonjin_yoon_title: "Professor, Civil & Environmental Eng. | Director of CAUS",
                 person_changhyun_kwon_title: "Professor, Industrial & Systems Eng.",
@@ -827,11 +837,11 @@
                 research_5_title: "Urban Digital Toolkit",
                 research_5_desc_short: "도시 데이터를 시각화하고 분석 결과를 효율적으로 활용할 수 있는 종합 툴킷을 제공합니다.",
                 research_5_details: "<li>인터랙티브 데이터 시각화 모듈</li><li>분석 결과 매핑 모듈</li><li>자연어 기반 시뮬레이션 모듈</li><li>자연어 기반 지식 은행 Q&A 모듈</li><li>도시 계획 및 설계 지원 모듈</li><li>플랫폼 개발을 위한 자원 및 파트너 정의 가이드라인</li>",
-                people_title: "연구팀",
+                people_title: "구성원",
                 people_subtitle: "우리의 비전을 이끌어가는 교수진, 연구원, 학생들을 만나보세요.",
                 people_professors_title: "KAIST 교수진",
                 people_scholars_title: "해외 협력 연구진",
-                people_students_title: "KAIST 연구원 및 학생",
+                people_students_title: "연구원 및 학생",
                 person_website: "웹사이트",
                 person_yoonjin_yoon_title: "건설및환경공학과 교수 | CAUS 센터장",
                 person_changhyun_kwon_title: "산업및시스템공학과 교수",
