@@ -112,33 +112,30 @@
 
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <!-- CAUS Logo -->
-                <a href="/" id="logo" class="transition-all duration-300 flex items-center space-x-3 group">
-                    <img id="caus-logo-img" src="/img/logo_caus.png" alt="CAUS Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/120x40/001633/ffffff?text=CAUS';">
-                    <div class="leading-tight">
-                        <div class="text-white font-semibold text-base md:text-lg" data-lang-key="brand_line1">Center for Advanced Urban Systems</div>
-                        <div class="text-gray-200 text-xs md:text-sm" data-lang-key="brand_line2">KAIST 도시인공지능연구소</div>
-                    </div>
-                </a>
-                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                    <a href="#about" class="nav-link" data-lang-key="nav_about">ABOUT</a>
-                    <a href="#research" class="nav-link" data-lang-key="nav_research">RESEARCH</a>
-                    <a href="#people" class="nav-link" data-lang-key="nav_people">PEOPLE</a>
-                    <a href="#events" class="nav-link" data-lang-key="nav_events">EVENTS</a>
-                    <a href="#publications" class="nav-link" data-lang-key="nav_publications">PUBLICATIONS</a>
-                    <a href="#contact" class="nav-link" data-lang-key="nav_contact">CONTACT</a>
-                </nav>
-                <div class="flex items-center">
-                    <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4" style="z-index:9999"> <!-- 클릭 겹침 예방용-->
-                        <button id="lang-en" class="lang-btn active" type="button" onclick="window.changeLanguage && window.changeLanguage('en')">EN</button>
-                        <button id="lang-ko" class="lang-btn" type="button" onclick="window.changeLanguage && window.changeLanguage('ko')">KO</button>
-                    </div>
-                    <button id="mobile-menu-button" class="md:hidden text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
+        <div class="relative flex items-center justify-between">
+            <!-- 왼쪽: 로고 -->
+            <a href="/" id="logo" class="flex items-center space-x-3">
+                <img id="caus-logo-img" src="img/logo_caus.png" alt="CAUS Logo" class="h-10 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/120x40/142B47/ffffff?text=CAUS';" />
+                <div class="leading-tight">
+                    <div class="text-white font-semibold text-base md:text-lg" data-lang-key="brand_line1">Center for Advanced Urban Systems</div>
+                    <div class="text-gray-200 text-xs md:text-sm" data-lang-key="brand_line2">KAIST 도시인공지능연구소</div>
                 </div>
+            </a>
+        
+            <!-- 가운데: 네비게이션 (absolute 중앙 정렬) -->
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-white absolute left-1/2 -translate-x-1/2">
+                <a href="#about" class="nav-link hover:text-blue-400" data-lang-key="nav_about">ABOUT</a>
+                <a href="#research" class="nav-link hover:text-blue-400" data-lang-key="nav_research">RESEARCH</a>
+                <a href="#people" class="nav-link hover:text-blue-400" data-lang-key="nav_people">PEOPLE</a>
+                <a href="#events" class="nav-link hover:text-blue-400" data-lang-key="nav_events">EVENTS</a>
+                <a href="#publications" class="nav-link hover:text-blue-400" data-lang-key="nav_publications">PUBLICATIONS</a>
+                <a href="#contact" class="nav-link hover:text-blue-400" data-lang-key="nav_contact">CONTACT</a>
+            </nav>
+        
+            <!-- 오른쪽: 언어 버튼 -->
+            <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1">
+                <button id="lang-en" class="lang-btn active" type="button" onclick="window.changeLanguage && window.changeLanguage('en')">EN</button>
+                <button id="lang-ko" class="lang-btn" type="button" onclick="window.changeLanguage && window.changeLanguage('ko')">KO</button>
             </div>
         </div>
     </header>
