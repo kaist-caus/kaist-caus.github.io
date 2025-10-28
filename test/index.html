@@ -111,14 +111,18 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" relative>
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <!-- CAUS Logo -->
-                <a href="#" id="logo" class="transition-all duration-300">
+                <a href="/" id="logo" class="transition-all duration-300 flex items-center space-x-3 group">
                     <img id="caus-logo-img" src="/img/logo_caus.png" alt="CAUS Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/120x40/001633/ffffff?text=CAUS';">
+                    <div class="leading-tight">
+                        <div class="text-white font-semibold text-base md:text-lg" data-lang-key="brand_line1">Center for Advanced Urban Systems</div>
+                        <div class="text-gray-200 text-xs md:text-sm" data-lang-key="brand_line2">KAIST 도시인공지능연구소</div>
+                    </div>
                 </a>
-                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
                     <a href="#about" class="nav-link" data-lang-key="nav_about">ABOUT</a>
                     <a href="#research" class="nav-link" data-lang-key="nav_research">RESEARCH</a>
                     <a href="#people" class="nav-link" data-lang-key="nav_people">PEOPLE</a>
@@ -261,7 +265,7 @@
         <section id="people" class="py-20 lg:py-32 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Team</h2>
+                    <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Member</h2>
                     <p class="section-subtitle" data-lang-key="people_subtitle">
                         Meet the dedicated faculty, researchers, and students driving our vision forward.
                     </p>
@@ -292,7 +296,7 @@
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_jinkyu_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Jinkyu Park">
-                            <h4 class="font-bold text-lg">Jinkyu Park</h4>
+                            <h4 class="font-bold text-lg">Jinkyoo Park</h4>
                             <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Professor, Industrial & Systems Eng.</p>
                             <a href="http://silab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
@@ -395,19 +399,26 @@
                         </div>
                     </div>
 
-                    <!-- Students & Staff -->
-                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">Students & Staff</h3>
+                    <!-- Students & Researchers -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">Students & Researchers</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 text-gray-700">
                         <div><span class="font-semibold">Youngjun Park</span>, <span data-lang-key="role_researcher">Postdoc</span></div>
                         <div><span class="font-semibold">Jiwon Park</span>, <span data-lang-key="role_researcher">Researcher</span></div>
-                        <!-- <div><span class="font-semibold">Hyemin Park</span>, <span data-lang-key="role_researcher">Researcher</span></div> -->
-                        <div><span class="font-semibold">Sungmin Son</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Suyeon Choi</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Heejae Kim</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Taeyoung Yoon</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Huijae Kim</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Taeyoung Yun</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Inhyuck Song</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Kanghun Lee</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Kanghoon Lee</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                         <div><span class="font-semibold">Byeongguk Jeon</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Keonhee Jang</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Minwoo Jeong</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Seungro Lee</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Jeeyun Chang</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Jihye Na</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Nhat Quang Tau</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Thi Thao Vy Bui</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Byeongin Joung</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Youngho Kim</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
+                        <div><span class="font-semibold">Matthew Sato</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
                     </div>
                 </div>
             </div>
@@ -429,42 +440,43 @@
                     <div class="grid grid-cols-1 gap-6">
 
                         <!-- 10/23 GS UAM Meeting -->
-                            <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
                               <p class="text-3xl font-bold text-blue-600">23</p>
                               <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
                             </div>
                             <div class="flex-grow">
-                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_gs_uam_title">GS UAM Research Meeting</h3>
-                              <!-- <p class="text-gray-600" data-lang-key="event_gs_uam_desc">Working session with GS UAM partners.</p> -->
+                                <h3 class="font-bold text-xl mb-1" data-lang-key="event_gs_uam_title">GS UAM Research Meeting</h3>
+                                <!-- <p class="text-gray-600" data-lang-key="event_gs_uam_desc">Working session with GS UAM partners.</p> -->
                             </div>
-                          </div>
+                        </div>
                         
-                          <!-- 10/16 CAUS 연구진 월례 회의 -->
+                        <!-- 10/16 CAUS 연구진 월례 회의 -->
+                        <!--
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                            <div class="text-center border-r border-gray-200 pr-6">
+                                <p class="text-3xl font-bold text-blue-600">16</p>
+                                <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-bold text-xl mb-1" data-lang-key="event_caus_monthly_title">CAUS Monthly Meeting</h3>
+                            </div>
+                        </div>  -->
+
+                        
+                          <!-- VIGILANT Meeting -->
                           <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
-                              <p class="text-3xl font-bold text-blue-600">16</p>
+                              <p class="text-3xl font-bold text-blue-600">23</p>
                               <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
                             </div>
                             <div class="flex-grow">
-                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_caus_monthly_title">CAUS Monthly Meeting</h3>
-                              <!-- <p class="text-gray-600" data-lang-key="event_caus_monthly_desc">Internal monthly research updates & planning.</p> -->
-                            </div>
-                          </div>
-                        
-                          <!-- 10/16 VIGILANT Kick-off Meeting -->
-                          <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
-                            <div class="text-center border-r border-gray-200 pr-6">
-                              <p class="text-3xl font-bold text-blue-600">16</p>
-                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
-                            </div>
-                            <div class="flex-grow">
-                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_vigilant_kickoff_title">VIGILANT Kick-off Meeting</h3>
-                              <!-- <p class="text-gray-600" data-lang-key="event_vigilant_kickoff_desc">Project kickoff: moving robot–based urban sensing.</p> -->
+                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_vigilant_meeting_title">VIGILANT Weekly Meeting</h3>
                             </div>
                           </div>
                         
                           <!-- 10/15 PRISM-X 주간 회의 -->
+                          <!--
                           <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
                               <p class="text-3xl font-bold text-blue-600">15</p>
@@ -472,9 +484,9 @@
                             </div>
                             <div class="flex-grow">
                               <h3 class="font-bold text-xl mb-1" data-lang-key="event_prismx_weekly_title">PRISM-X Weekly Meeting</h3>
-                              <!-- <p class="text-gray-600" data-lang-key="event_prismx_weekly_desc">Weekly check-in on PRISM-X tasks & milestones.</p> -->
                             </div>
                           </div>
+                          -->
 
                         <!-- Event Item -->
                         <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
@@ -610,6 +622,9 @@
                     <div class="p-4 border-l-4 border-blue-600">
                         <p class="text-lg font-medium text-gray-800">Yun, T., Shin, Y., Song, I., & Park, J. (2025). Traffic network layout optimization with diffusion models. <span class="italic">Proceedings of the TSL 2025 Conference Workshop.</span></p>
                     </div>
+                    <div class="p-4 border-l-4 border-blue-600">
+                        <p class="text-lg font-medium text-gray-800">Jeong, M., Chang, J., & Yoon, Y. (2025). Speak to Simulate: An LLM-Guided Agentic Framework for Traffic Simulation in SUMO, <span class="italic">Proceedings of the 8th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation. (GeoSIM '25)</span></p>
+                    </div>
                     <!-- <div class="p-4 border-l-4 border-blue-600">
                         <p class="text-lg font-medium text-gray-800">Choi, H., & Doe, J. (2024). "Predicting Pedestrian Flow with Graph Convolutional Networks." <span class="italic">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 8</span>(4), 1-25.</p>
                     </div>
@@ -724,11 +739,11 @@
                 research_5_title: "Urban Digital Toolkit",
                 research_5_desc_short: "A toolkit for visualizing and utilizing data, analysis, and reports.",
                 research_5_details: `<li>Interactive data visualization modules.</li><li>Analysis content mapping modules.</li><li>Natural language-based simulation modules.</li><li>Natural language-based knowledge bank Q&A modules.</li><li>Urban planning and design modules.</li><li>Defining resources and partners for platform development based on the toolkit.</li>`,
-                people_title: "Our Team",
+                people_title: "Our Member",
                 people_subtitle: "Meet the dedicated faculty, researchers, and students driving our vision forward.",
                 people_professors_title: "KAIST Professors",
                 people_scholars_title: "Global Scholars",
-                people_students_title: "KAIST Students & Staff",
+                people_students_title: "KAIST Students & Researchers",
                 person_website: "Website",
                 person_yoonjin_yoon_title: "Professor, Civil & Environmental Eng. | Director of CAUS",
                 person_changhyun_kwon_title: "Professor, Industrial & Systems Eng.",
@@ -754,8 +769,8 @@
                 // event_gs_uam_desc: "Working session with GS UAM partners.",
                 event_caus_monthly_title: "CAUS Monthly Meeting",
                 // event_caus_monthly_desc: "Internal monthly research updates & planning.",
-                event_vigilant_kickoff_title: "VIGILANT Kick-off Meeting",
-                // event_vigilant_kickoff_desc: "Project kickoff: moving robot–based urban sensing.",
+                event_vigilant_meeting_title: "VIGILANT Weekly Meeting",
+                // event_vigilant_meeting_desc: "Project kickoff: moving robot–based urban sensing.",
                 event_prismx_weekly_title: "PRISM-X Weekly Meeting",
                 // event_prismx_weekly_desc: "Weekly check-in on PRISM-X tasks & milestones.",
                 
@@ -827,11 +842,11 @@
                 research_5_title: "Urban Digital Toolkit",
                 research_5_desc_short: "도시 데이터를 시각화하고 분석 결과를 효율적으로 활용할 수 있는 종합 툴킷을 제공합니다.",
                 research_5_details: "<li>인터랙티브 데이터 시각화 모듈</li><li>분석 결과 매핑 모듈</li><li>자연어 기반 시뮬레이션 모듈</li><li>자연어 기반 지식 은행 Q&A 모듈</li><li>도시 계획 및 설계 지원 모듈</li><li>플랫폼 개발을 위한 자원 및 파트너 정의 가이드라인</li>",
-                people_title: "연구팀",
+                people_title: "구성원",
                 people_subtitle: "우리의 비전을 이끌어가는 교수진, 연구원, 학생들을 만나보세요.",
                 people_professors_title: "KAIST 교수진",
                 people_scholars_title: "해외 협력 연구진",
-                people_students_title: "KAIST 연구원 및 학생",
+                people_students_title: "연구원 및 학생",
                 person_website: "웹사이트",
                 person_yoonjin_yoon_title: "건설및환경공학과 교수 | CAUS 센터장",
                 person_changhyun_kwon_title: "산업및시스템공학과 교수",
@@ -859,7 +874,7 @@
                 // event_gs_uam_desc: "GS UAM 파트너사와의 업무 회의.",
                 event_caus_monthly_title: "CAUS 연구진 월례 회의",
                 // event_caus_monthly_desc: "월간 연구 진행 상황 공유 및 계획 수립.",
-                event_vigilant_kickoff_title: "VIGILANT 킥오프 미팅",
+                event_vigilant_meeting_title: "VIGILANT 주간 회의",
                 // event_vigilant_kickoff_desc: "무인이동체 기반 도시 센싱 프로젝트 착수 회의.",
                 event_prismx_weekly_title: "PRISM-X 주간 회의",
                 // event_prismx_weekly_desc: "주간 업무 점검 및 마일스톤 공유.",
