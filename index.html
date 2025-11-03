@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Center for Advanced Urban Systems (CAUS) | 도시 인공지능 연구소</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Inter & Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
 
@@ -22,16 +22,19 @@
             font-family: 'Inter', 'Noto Sans KR', sans-serif;
             scroll-behavior: smooth;
         }
+
         .hero-bg {
             background-image: linear-gradient(rgba(0, 22, 51, 0.9), rgba(0, 22, 51, 0.9));
             background-size: cover;
             background-position: center;
         }
+
         .section-title {
             font-size: 2.25rem; /* 36px */
             font-weight: 700;
             margin-bottom: 1rem;
         }
+
         .section-subtitle {
             font-size: 1.25rem; /* 20px */
             color: #4b5563; /* gray-600 */
@@ -40,6 +43,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .nav-link {
             color: rgba(255, 255, 255, 0.8);
             transition: color 0.3s ease;
@@ -48,7 +52,7 @@
             color: white;
         } */
         .nav-link-scrolled {
-             @apply text-gray-600 hover:text-gray-900 transition-colors duration-300;
+            @apply text-gray-600 hover:text-gray-900 transition-colors duration-300;
         }
         /* .nav-link-scrolled:hover {
             color: #111827;
@@ -61,18 +65,22 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .lang-btn.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
+
+            .lang-btn.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+
         .lang-btn-scrolled.active {
             background-color: #e5e7eb;
             color: #111827;
         }
+
         .video-thumbnail-overlay {
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .video-thumbnail:hover .video-thumbnail-overlay {
             opacity: 1;
         }
@@ -83,29 +91,31 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* 스크롤 시(white header로 바뀌는 경우) 색상 조정 */
-        #header.scrolled {
-            background-color: #ffffff; /* 흰색 헤더 */
-            color: #182c47;
-        }
+            /* 스크롤 시(white header로 바뀌는 경우) 색상 조정 */
+            #header.scrolled {
+                background-color: #ffffff; /* 흰색 헤더 */
+                color: #182c47;
+            }
 
-        /* nav 링크 색상 조정 */
-        #header .nav-link {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        #header.scrolled .nav-link {
-            color: #182c47;
-        }
+            /* nav 링크 색상 조정 */
+            #header .nav-link {
+                color: rgba(255, 255, 255, 0.9);
+            }
 
-        /* 언어 버튼 */
-        #header .lang-btn {
-            color: white;
-            border-color: rgba(255,255,255,0.3);
-        }
-        #header.scrolled .lang-btn {
-            color: #001633;
-            border-color: #d1d5db;
-        }
+            #header.scrolled .nav-link {
+                color: #182c47;
+            }
+
+            /* 언어 버튼 */
+            #header .lang-btn {
+                color: white;
+                border-color: rgba(255,255,255,0.3);
+            }
+
+            #header.scrolled .lang-btn {
+                color: #001633;
+                border-color: #d1d5db;
+            }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -131,7 +141,8 @@
                     <a href="#contact" class="nav-link" data-lang-key="nav_contact">CONTACT</a>
                 </nav>
                 <div class="flex items-center">
-                    <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4" style="z-index:9999"> <!-- 클릭 겹침 예방용-->
+                    <div id="lang-switcher" class="hidden md:flex items-center space-x-1 border border-white/30 rounded-lg p-1 mr-4" style="z-index:9999">
+                        <!-- 클릭 겹침 예방용-->
                         <button id="lang-en" class="lang-btn active" type="button" onclick="window.changeLanguage && window.changeLanguage('en')">EN</button>
                         <button id="lang-ko" class="lang-btn" type="button" onclick="window.changeLanguage && window.changeLanguage('ko')">KO</button>
                     </div>
@@ -142,7 +153,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900/95 z-40 md:hidden">
         <div class="flex flex-col items-center justify-center h-full">
@@ -182,8 +193,10 @@
                     Fostering interdisciplinary collaboration to build the next generation of smart cities.
                 </p>
                 <div class="max-w-4xl mx-auto text-left text-lg text-gray-700 space-y-6">
-                    <p data-lang-key="about_description">  Launched in August 2024, Center for Advanced Urban Systems (CAUS) is the nation's first research center focusing on Urban AI, sponsored by GS E&C, South Korea. Our mission is to develop key technology for sustainable urban growth from planning to maturity leveraging the vast amount of urban data. Our scope encompass beyond the smart city research as we focus on the urban behaviors,  city more livable and equitable by uncovering hidden patterns of interactions between people and physical urban environment. 
-                        <br>  Transdisciplinary team of researchers from Civil Engineering, Computer Science, Artificial Intelligence, Operations Research from forms a super-convergence international cooperation ecosystem through the collaboration of seven professors from four departments within KAIST, along with five professors from leading global urban science research institutions, including the Stanford Doerr School of Sustainability, MIT Senseable City Lab, NYU Center for Urban Science + Progress, and NYU Marron Institute. Our research project enables accurate data-driven analysis across various aspects of the city, laying the foundation for solving key urban issues such as energy shortages, environmental pollution, security concerns, and traffic congestion.</p>
+                    <p data-lang-key="about_description">
+                        Launched in August 2024, Center for Advanced Urban Systems (CAUS) is the nation's first research center focusing on Urban AI. Our mission is to develop key technology for sustainable urban growth from planning to maturity leveraging the vast amount of urban data. Our scope encompass beyond the smart city research as we focus on the urban behaviors,  city more livable and equitable by uncovering hidden patterns of interactions between people and physical urban environment.
+                        <br>  Transdisciplinary team of researchers from Civil Engineering, Computer Science, Artificial Intelligence, Operations Research from forms a super-convergence international cooperation ecosystem through the collaboration of seven professors from four departments within KAIST, along with five professors from leading global urban science research institutions, including the Stanford Doerr School of Sustainability, MIT Senseable City Lab, NYU Center for Urban Science + Progress, and NYU Marron Institute. Our research project enables accurate data-driven analysis across various aspects of the city, laying the foundation for solving key urban issues such as energy shortages, environmental pollution, security concerns, and traffic congestion.
+                    </p>
                     <!-- <p data-lang-key="about_description_2">Considering the organic and complex nature of cities, we have formed a convergent research team at KAIST encompassing civil & environmental engineering, computer science, artificial intelligence, and industrial engineering. We also collaborate with world-class research institutions in the urban IT field, such as Stanford, MIT, and NYU.</p> -->
                 </div>
             </div>
@@ -205,7 +218,7 @@
                             <li>Urban computing system and application for smart city.</li>
                             <li>Real-time urban sensing based on active moving sensors.</li>
                             <li>System requirements for digital infrastructure.</li>
-                        </ul>                    
+                        </ul>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg text-left">
                         <i data-lucide="brain-circuit" class="w-12 h-12 text-blue-600 mb-4"></i>
@@ -218,7 +231,7 @@
                             <li>AI technology for traffic impact assessment.</li>
                             <li>City-scale traffic simulation technology.</li>
                             <li>AI for urban planning and design automation.</li>
-                        </ul>                    
+                        </ul>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg text-left">
                         <i data-lucide="users" class="w-12 h-12 text-blue-600 mb-4"></i>
@@ -230,7 +243,7 @@
                             <li>Conversational AI models for community service utilization.</li>
                             <li>Interactive urban Q&A technology based on comprehensive reasoning.</li>
                             <!-- <li>Analysis, prediction, and explanation of the impacts of climate change on urban economies and infrastructure.</li> -->
-                        </ul>                    
+                        </ul>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg text-left">
                         <i data-lucide="layout-template" class="w-12 h-12 text-blue-600 mb-4"></i>
@@ -243,7 +256,7 @@
                             <li>Natural language-based knowledge bank Q&A modules.</li>
                             <li>Urban planning and design modules.</li>
                             <li>Defining resources and partners for development.</li>
-                        </ul>                    
+                        </ul>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg text-left">
                         <i data-lucide="globe-2" class="w-12 h-12 text-blue-600 mb-4"></i>
@@ -255,7 +268,7 @@
                             <li>Co-hosting major conferences to enhance visibility.</li>
                             <li>Education and advisory programs for practitioners.</li>
                             <li>Expansion of the cooperation network for urban studies.</li>
-                        </ul>                    
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -266,7 +279,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="section-title text-gray-900" data-lang-key="people_title">Our Member</h2>
-                    
+
                 </div>
 
                 <div class="max-w-6xl mx-auto">
@@ -277,7 +290,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Yoonjin Yoon">
                             <h4 class="font-bold text-lg">Yoonjin Yoon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Professor, Civil & Environmental Eng. | Director of CAUS</p>
+                            <!-- <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_yoonjin_yoon_title">Professor, Civil & Environmental Eng. | Director of CAUS</p> -->
                             <a href="https://spacetime.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -286,7 +299,6 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_kwon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Changhyun Kwon">
                             <h4 class="font-bold text-lg">Changhyun Kwon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_changhyun_kwon_title">Professor, Industrial & Systems Eng.</p>
                             <a href="https://comet.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -295,7 +307,6 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_jinkyu_park.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Jinkyu Park">
                             <h4 class="font-bold text-lg">Jinkyoo Park</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_jinkyu_park_title">Professor, Industrial & Systems Eng.</p>
                             <a href="http://silab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -304,7 +315,6 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_taesik_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Taesik Lee">
                             <h4 class="font-bold text-lg">Taesik Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_taesik_lee_title">Professor, Industrial & Systems Eng.</p>
                             <a href="https://csdlab.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -313,8 +323,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_dongman_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Dongman Lee">
                             <h4 class="font-bold text-lg">Dongman Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_dongman_lee_title">Professor, School of Computing</p>
-                            <a href="https://cds.kaist.ac.kr/"  target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                            <a href="https://cds.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
@@ -322,7 +331,6 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_kukjin_yoon.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kuk-jin Yoon">
                             <h4 class="font-bold text-lg">Kuk-jin Yoon</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_kukjin_yoon_title">Professor, Mechanical Eng.</p>
                             <a href="https://vi.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -331,7 +339,6 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_minjun_seo.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Minjoon Seo">
                             <h4 class="font-bold text-lg">Minjoon Seo</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_minjoon_seo_title">Professor, Kim Jaechul Graduate School of AI</p>
                             <a href="https://seominjoon.github.io/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -340,7 +347,6 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_uichin_lee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Uichin Lee">
                             <h4 class="font-bold text-lg">Uichin Lee</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16" data-lang-key="person_uichin_lee_title">Professor, School of Computing</p>
                             <a href="https://ic.kaist.ac.kr/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -358,12 +364,12 @@
 
                     <!-- Global Scholars -->
                     <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-8 mt-16" data-lang-key="people_scholars_title">Global Scholars</h3>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Profile Card -->
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_mau.png" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Maurizio Porfiri">
                             <h4 class="font-bold text-lg">Maurizio Porfiri</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p>
+                            <!-- <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p> -->
                             <a href="https://engineering.nyu.edu/faculty/maurizio-porfiri" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -372,7 +378,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_taka.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Takahiro Yabe">
                             <h4 class="font-bold text-lg">Takahiro Yabe</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p>
+                            <!-- <p class="text-sm text-gray-600 mt-1 h-16">Professor at NYU, Center for Urban Science + Progress</p> -->
                             <a href="https://engineering.nyu.edu/faculty/takahiro-yabe" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -381,7 +387,7 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_duarte_ fabio.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Fabio Duarte">
                             <h4 class="font-bold text-lg">Fabio Duarte</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at MIT, Senseable City Lab</p>
+                            <!-- <p class="text-sm text-gray-600 mt-1 h-16">Professor at MIT, Senseable City Lab</p> -->
                             <a href="https://senseable.mit.edu/duarte/" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
@@ -390,33 +396,32 @@
                         <div class="bg-gray-50 rounded-lg p-6 text-center shadow-sm">
                             <img src="/img/profile_kincho_h_law.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Photo of Kincho Law">
                             <h4 class="font-bold text-lg">Kincho Law</h4>
-                            <p class="text-sm text-gray-600 mt-1 h-16">Professor at Stanford Univ., Civil and Environmental Engineering</p>
+                            <!-- <p class="text-sm text-gray-600 mt-1 h-16">Professor at Stanford Univ., Civil and Environmental Engineering</p> -->
                             <a href="https://profiles.stanford.edu/kincho-law" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
                                 <span data-lang-key="person_website">Website</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Students & Researchers -->
-                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">Students & Researchers</h3>
+                    <!-- Research Staff -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_researchstaff_title">Research Staffs</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 text-gray-700">
-                        <div><span class="font-semibold">Youngjun Park</span>, <span data-lang-key="role_researcher">Postdoc</span></div>
-                        <div><span class="font-semibold">Jiwon Park</span>, <span data-lang-key="role_researcher">Researcher</span></div>
-                        <div><span class="font-semibold">Huijae Kim</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Taeyoung Yun</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Inhyuck Song</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Kanghoon Lee</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Byeongguk Jeon</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Keonhee Jang</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Minwoo Jeong</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Seungro Lee</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Jeeyun Chang</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Jihye Na</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Nhat Quang Tau</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Thi Thao Vy Bui</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Byeongin Joung</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
-                        <div><span class="font-semibold">Youngho Kim</span>, <span data-lang-key="role_graduate">Graduate Student</span></div>
-                        <div><span class="font-semibold">Matthew Sato</span>, <span data-lang-key="role_doctoral">Doctoral Student</span></div>
+                        <div><span class="font-semibold">Youngjun Park</span></div>
+                        <div><span class="font-semibold">Jiwon Park</span></div>
+                        <div><span class="font-semibold">Hyemin Park</span></div>
+                        <div><span class="font-semibold">Namwoo Kim</span></div>
+                        <div><span class="font-semibold">Seyoon Kim</span></div>
+                    </div>
+
+                    <!-- Students -->
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="people_students_title">Students</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 text-gray-700">
+                        <div><span class="font-semibold">Heejae Kim</span></div>
+                        <div><span class="font-semibold">Taeyoung Yoon</span></div>
+                        <div><span class="font-semibold">Inhyuck Song</span></div>
+                        <div><span class="font-semibold">Kanghun Lee</span></div>
+                        <div><span class="font-semibold">Byeongguk Jeon</span></div>
+                        <div><span class="font-semibold">Donghyun Yoon</span></div>
                     </div>
                 </div>
             </div>
@@ -437,55 +442,42 @@
                     <!-- <div class="space-y-6"> -->
                     <div class="grid grid-cols-1 gap-6">
 
-                        <!-- 10/23 GS UAM Meeting -->
+
+
+                        <!-- VIGILANT Meeting -->
                         <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
-                              <p class="text-3xl font-bold text-blue-600">23</p>
-                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                                <p class="text-3xl font-bold text-blue-600">6</p>
+                                <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_nov_2025">NOV 2025</p>
                             </div>
                             <div class="flex-grow">
-                                <h3 class="font-bold text-xl mb-1" data-lang-key="event_gs_uam_title">GS UAM Research Meeting</h3>
-                                <!-- <p class="text-gray-600" data-lang-key="event_gs_uam_desc">Working session with GS UAM partners.</p> -->
+                                <h3 class="font-bold text-xl mb-1" data-lang-key="event_vigilant_meeting_title">VIGILANT Weekly Meeting</h3>
                             </div>
                         </div>
-                        
-                        <!-- 10/16 CAUS 연구진 월례 회의 -->
+
+                        <!-- 10/15 PRISM-X 주간 회의 -->
                         <!--
                         <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
+                          <div class="text-center border-r border-gray-200 pr-6">
+                            <p class="text-3xl font-bold text-blue-600">15</p>
+                            <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                          </div>
+                          <div class="flex-grow">
+                            <h3 class="font-bold text-xl mb-1" data-lang-key="event_prismx_weekly_title">PRISM-X Weekly Meeting</h3>
+                          </div>
+                        </div>
+                        -->
+                        <!-- CAUS 연구진 월례 회의 -->
+
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
-                                <p class="text-3xl font-bold text-blue-600">16</p>
-                                <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
+                                <p class="text-3xl font-bold text-blue-600">20</p>
+                                <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_nov_2025">NOV 2025</p>
                             </div>
                             <div class="flex-grow">
                                 <h3 class="font-bold text-xl mb-1" data-lang-key="event_caus_monthly_title">CAUS Monthly Meeting</h3>
                             </div>
-                        </div>  -->
-
-                        
-                          <!-- VIGILANT Meeting -->
-                          <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
-                            <div class="text-center border-r border-gray-200 pr-6">
-                              <p class="text-3xl font-bold text-blue-600">23</p>
-                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
-                            </div>
-                            <div class="flex-grow">
-                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_vigilant_meeting_title">VIGILANT Weekly Meeting</h3>
-                            </div>
-                          </div>
-                        
-                          <!-- 10/15 PRISM-X 주간 회의 -->
-                          <!--
-                          <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
-                            <div class="text-center border-r border-gray-200 pr-6">
-                              <p class="text-3xl font-bold text-blue-600">15</p>
-                              <p class="text-sm font-medium text-gray-600" data-lang-key="event_month_oct_2025">OCT 2025</p>
-                            </div>
-                            <div class="flex-grow">
-                              <h3 class="font-bold text-xl mb-1" data-lang-key="event_prismx_weekly_title">PRISM-X Weekly Meeting</h3>
-                            </div>
-                          </div>
-                          -->
-
+                        </div>
                         <!-- Event Item -->
                         <div class="bg-white rounded-xl shadow-lg p-6 flex items-start space-x-6">
                             <div class="text-center border-r border-gray-200 pr-6">
@@ -543,12 +535,8 @@
                         </div> -->
                     </div>
 
-                    <!-- News Section -->
-                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="news_title">News</h3>
-                      <p class="section-subtitle !mb-8" data-lang-key="news_subtitle">Latest announcements and updates from CAUS.</p>
-
                     <!-- Past Seminar Recordings -->
-                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="events_recordings_title">Past Seminar & Lecture Recordings</h3>
+                    <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 mb-6 mt-16" data-lang-key="events_recordings_title">Seminars</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Recording Item -->
                         <a href="https://youtu.be/6BDmRLNJNp4?si=tBc6DuEFLSg699nN" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
@@ -564,7 +552,7 @@
                             </div>
                         </a>
                         <!-- Recording Item -->
-                         <a href="https://youtu.be/qRbH-_GiC8U?si=htwUqTdDeCk4wMpf" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <a href="https://youtu.be/qRbH-_GiC8U?si=htwUqTdDeCk4wMpf" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
                             <div class="relative video-thumbnail">
                                 <img src="https://img.youtube.com/vi/qRbH-_GiC8U/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
                                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
@@ -577,7 +565,7 @@
                             </div>
                         </a>
                         <!-- Recording Item -->
-                         <a href="https://youtu.be/juLs2_0QUMU?si=LvKb6jKWkfMDxNMe" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <a href="https://youtu.be/juLs2_0QUMU?si=LvKb6jKWkfMDxNMe" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
                             <div class="relative video-thumbnail">
                                 <img src="https://img.youtube.com/vi/juLs2_0QUMU/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
                                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
@@ -590,7 +578,7 @@
                             </div>
                         </a>
                         <!-- Recording Item -->
-                         <a href="https://youtu.be/D18TnNnS3J0?si=mRZeNyDj-236uEah" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <a href="https://youtu.be/D18TnNnS3J0?si=mRZeNyDj-236uEah" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden group">
                             <div class="relative video-thumbnail">
                                 <img src="https://img.youtube.com/vi/D18TnNnS3J0/mqdefault.jpg" alt="Video Thumbnail" class="w-full h-auto">
                                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center video-thumbnail-overlay">
@@ -608,41 +596,69 @@
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" class="py-20 lg:py-32 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="section-title text-gray-900" data-lang-key="publications_title">Featured Publications</h2>
-                    <p class="section-subtitle" data-lang-key="publications_subtitle">
-                        A selection of our recent contributions to the field of urban science.
-                    </p>
+        <section id="publications" class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Publications</h2>
+
+                <div class="space-y-6">
+                    <!-- 2025 -->
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <p class="text-gray-800 font-medium">
+                            Yoon, D., Jeong, M., Lee, J., Kim, S., &amp; Yoon, Y. (2025). <em>Integrating urban air mobility with highway infrastructure: A strategic approach for vertiport location selection in the Seoul metropolitan area</em> (arXiv preprint No. 2502.00399).
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <p class="text-gray-800 font-medium">
+                            Kim, N., Sohn, S., &amp; Yoon, Y. (2025).
+                            <em>Graph-based optimization for vertiport network planning under urban air mobility constraints.</em>
+                            In <em>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops</em>, pp. 6490–6502.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <p class="text-gray-800 font-medium">
+                            Kim, N., Sohn, S., &amp; Yoon, Y. (2025).
+                            <em>Graph-based optimization for vertiport network planning under urban air mobility constraints.</em>
+                            In <em>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops</em>, pp. 6490–6502.
+                        </p>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <p class="text-gray-800 font-medium">
+                            Ro, J., &amp; Yoon, Y. (2024). Fill in the gap: Two-stage prediction modeling framework for understanding human biosensor data. In <em>Proceedings of the 15th International Conference on Information and Communication Technology Convergence (ICTC)</em>, Jeju Island, Korea, pp. 787–792.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <p class="text-gray-800 font-medium">
+                            Oh, S., &amp; Yoon, Y. (2024). Urban drone operations: A data-centric and comprehensive assessment of urban airspace with a Pareto-based approach. <em>Transportation Research Part A: Policy and Practice, 182</em>, 104034.
+                        </p>
+                    </div>
                 </div>
-                <div class="max-w-4xl mx-auto space-y-6">
-                    <div class="p-4 border-l-4 border-blue-600">
-                        <p class="text-lg font-medium text-gray-800">Yun, T., Shin, Y., Song, I., & Park, J. (2025). Traffic network layout optimization with diffusion models. <span class="italic">Proceedings of the TSL 2025 Conference Workshop.</span></p>
-                    </div>
-                    <div class="p-4 border-l-4 border-blue-600">
-                        <p class="text-lg font-medium text-gray-800">Jeong, M., Chang, J., & Yoon, Y. (2025). Speak to Simulate: An LLM-Guided Agentic Framework for Traffic Simulation in SUMO, <span class="italic">Proceedings of the 8th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation. (GeoSIM '25)</span></p>
-                    </div>
-                    <!-- <div class="p-4 border-l-4 border-blue-600">
-                        <p class="text-lg font-medium text-gray-800">Choi, H., & Doe, J. (2024). "Predicting Pedestrian Flow with Graph Convolutional Networks." <span class="italic">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 8</span>(4), 1-25.</p>
-                    </div>
-                    <div class="p-4 border-l-4 border-blue-600">
-                        <p class="text-lg font-medium text-gray-800">Lee, M. (2024). "A Framework for Urban-Human Interaction based on Augmented Reality." <span class="italic">IEEE Transactions on Visualization and Computer Graphics, 30</span>(11), 1345-1358.</p>
-                    </div> -->
+
+                <div class="text-center mt-8">
+                    <a href="publications.html"
+                       class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+                        View all publications
+                    </a>
                 </div>
             </div>
         </section>
-        
+
+
         <!-- Partners Section -->
         <section id="partners" class="py-16">
             <div class="container mx-auto px-6">
                 <h3 class="text-center text-lg font-semibold text-gray-600 mb-8" data-lang-key="partners_title">Our Valued Partners & Sponsors</h3>
                 <div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
-                    <img src="/img/kaist_logo.png" alt="KAIST Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/GS logo.jpg" alt="GS E&C Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/kaist_logo.png" alt="KAIST AI Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
+                    <img src="/img/kaist-ai_logo.png" alt="KAIST Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
                     <img src="/img/NYU logo.jpg" alt="NYU Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
                     <img src="/img/stanford-university-logo.png" alt="Stanford Logo" class="h-8 grayscale hover:grayscale-0 transition-all">
                     <img src="/img/MIT_logo.png" alt="MIT Logo" class="h-10 grayscale hover:grayscale-0 transition-all">
-                    <img src="/img/GS logo.jpg" alt="GS E&C Logo" class="h-12 grayscale hover:grayscale-0 transition-all">
                 </div>
             </div>
         </section>
@@ -658,29 +674,33 @@
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4" data-lang-key="footer_location">Location</h4>
-                    <p class="text-gray-400" data-lang-key="footer_seoul_office"><Strong>Seoul Office</Strong><br>
-                    Grand Seoul Tower #2,<br> 
-                    33 Jong-ro, Jongno-gu,<br>
-                    Seoul 03159, Republic of Korea<br>
-                    <br>
-                    <p class="text-gray-400" data-lang-key="footer_kaist_office"><Strong>KAIST Office</Strong><br>
-                    W16 Bldg.<br>
-                    291 Daehak-ro, Yuseong-gu,<br>
-                    Daejeon 34141, Republic of Korea<br>
-                    <!-- <br> -->
-                    <!-- <a href="mailto:yoonjin@kaist.ac.kr" class="text-blue-400 hover:underline">yoonjin@kaist.ac.kr</a>
-                    </p> -->
+                    <p class="text-gray-400" data-lang-key="footer_seoul_office">
+                        <Strong>Seoul Office</Strong><br>
+                        Grand Seoul Tower #2,<br>
+                        33 Jong-ro, Jongno-gu,<br>
+                        Seoul 03159, Republic of Korea<br>
+                        <br>
+                    <p class="text-gray-400" data-lang-key="footer_kaist_office">
+                        <Strong>KAIST Office</Strong><br>
+                        W16 Bldg.<br>
+                        291 Daehak-ro, Yuseong-gu,<br>
+                        Daejeon 34141, Republic of Korea<br>
+                        <!-- <br> -->
+                        <!-- <a href="mailto:yoonjin@kaist.ac.kr" class="text-blue-400 hover:underline">yoonjin@kaist.ac.kr</a>
+                        </p> -->
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4" data-lang-key="footer_contact">Contact Us</h4>
                     <div class="flex space-x-4">
-                        <p class="text-gray-400">Director Yoonjin Yoon<br>
-                        <a href="mailto:yoonjin@kaist.ac.kr" class="text-blue-400 hover:underline">yoonjin@kaist.ac.kr</a></p>
-                    <!-- <br>
-                        <p class="text-gray-400">Postdoc Youngjun Park<br>
-                        <a href="mailto:youngjourpark@kaist.ac.kr" class="text-blue-400 hover:underline">youngjourpark@kaist.ac.kr</a>
-                    </p> -->
-                    <br>
+                        <p class="text-gray-400">
+                            Director Yoonjin Yoon<br>
+                            <a href="mailto:yoonjin@kaist.ac.kr" class="text-blue-400 hover:underline">yoonjin@kaist.ac.kr</a>
+                        </p>
+                        <!-- <br>
+                            <p class="text-gray-400">Postdoc Youngjun Park<br>
+                            <a href="mailto:youngjourpark@kaist.ac.kr" class="text-blue-400 hover:underline">youngjourpark@kaist.ac.kr</a>
+                        </p> -->
+                        <br>
                         <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter" class="w-6 h-6"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="youtube" class="w-6 h-6"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
@@ -719,7 +739,7 @@
                 hero_button: "Learn More",
                 about_title: "About CAUS",
                 about_subtitle: "Fostering interdisciplinary collaboration to build the next generation of smart cities.",
-                about_description: "Launched in August 2024, Center for Advanced Urban Systems (CAUS) is the nation's first research center focusing on Urban AI, sponsored by GS E&C, South Korea. Our mission is to develop key technology for sustainable urban growth from planning to maturity leveraging the vast amount of urban data. Our scope encompass beyond the smart city research as we focus on the urban behaviors,  city more livable and equitable by uncovering hidden patterns of interactions between people and physical urban environment. <br> Transdisciplinary team of researchers from Civil Engineering, Computer Science, Artificial Intelligence, Operations Research from forms a super-convergence international cooperation ecosystem through the collaboration of seven professors from four departments within KAIST, along with five professors from leading global urban science research institutions, including the Stanford Doerr School of Sustainability, MIT Senseable City Lab, NYU Center for Urban Science + Progress, and NYU Marron Institute. Our research project enables accurate data-driven analysis across various aspects of the city, laying the foundation for solving key urban issues such as energy shortages, environmental pollution, security concerns, and traffic congestion.",
+                about_description: "Launched in August 2024, Center for Advanced Urban Systems (CAUS) is the nation's first research center focusing on Urban AI. Our mission is to develop key technology for sustainable urban growth from planning to maturity leveraging the vast amount of urban data. Our scope encompass beyond the smart city research as we focus on the urban behaviors,  city more livable and equitable by uncovering hidden patterns of interactions between people and physical urban environment. <br> Transdisciplinary team of researchers from Civil Engineering, Computer Science, Artificial Intelligence, Operations Research from forms a super-convergence international cooperation ecosystem through the collaboration of seven professors from four departments within KAIST, along with five professors from leading global urban science research institutions, including the Stanford Doerr School of Sustainability, MIT Senseable City Lab, NYU Center for Urban Science + Progress, and NYU Marron Institute. Our research project enables accurate data-driven analysis across various aspects of the city, laying the foundation for solving key urban issues such as energy shortages, environmental pollution, security concerns, and traffic congestion.",
                 research_title: "Key Research Areas",
                 research_subtitle: "Our research is structured around five core pillars, from global networks to human-centric urban technologies.",
                 research_1_title: "Global Research Network",
@@ -738,10 +758,10 @@
                 research_5_desc_short: "A toolkit for visualizing and utilizing data, analysis, and reports.",
                 research_5_details: `<li>Interactive data visualization modules.</li><li>Analysis content mapping modules.</li><li>Natural language-based simulation modules.</li><li>Natural language-based knowledge bank Q&A modules.</li><li>Urban planning and design modules.</li><li>Defining resources and partners for platform development based on the toolkit.</li>`,
                 people_title: "Our Member",
-                people_subtitle: "Meet the dedicated faculty, researchers, and students driving our vision forward.",
                 people_professors_title: "KAIST Professors",
                 people_scholars_title: "Global Scholars",
-                people_students_title: "KAIST Students & Researchers",
+                people_researchstaff_title: "Research Staffs",
+                people_students_title: "Students",
                 person_website: "Website",
                 person_yoonjin_yoon_title: "Professor, Civil & Environmental Eng. | Director of CAUS",
                 person_changhyun_kwon_title: "Professor, Industrial & Systems Eng.",
@@ -757,24 +777,19 @@
                 events_title: "News & Events",
                 events_subtitle: "Join our open seminars and stay updated with the latest news from CAUS.",
                 events_upcoming_title: "Events Calendar",
-                events_recordings_title: "Past Seminar Recordings",
+                events_recordings_title: "Seminars Recordings",
                 event_month_nov_2025: "NOV 2025",   // ← 신규
                 event_month_mar_2026: "MAR 2026",   // ← 신규
                 event_hcfm_title: "Urban X - HcFM Workshop @Berkeley",
                 event_hcfm_desc: "A two-day workshop focusing on Urban Air Mobility and Urban AI",
                 event_month_oct_2025: "OCT 2025",
-                event_gs_uam_title: "GS UAM Research Meeting",
-                // event_gs_uam_desc: "Working session with GS UAM partners.",
                 event_caus_monthly_title: "CAUS Monthly Meeting",
                 // event_caus_monthly_desc: "Internal monthly research updates & planning.",
                 event_vigilant_meeting_title: "VIGILANT Weekly Meeting",
                 // event_vigilant_meeting_desc: "Project kickoff: moving robot–based urban sensing.",
                 event_prismx_weekly_title: "PRISM-X Weekly Meeting",
                 // event_prismx_weekly_desc: "Weekly check-in on PRISM-X tasks & milestones.",
-                
-                news_title: "News",
-                news_subtitle: "Latest announcements and updates from CAUS.",
-                
+
                 event_caus_conf_title: "CAUS Annual Conference",
                 event_caus_conf_desc: "A conference featuring keynote talks, panels, and demos on Urban AI (date TBA)",
                 recording_li_title: "[Urban X Seminar - Special Talk] Uncertainty-Aware Air Traffic Management...",
@@ -817,12 +832,12 @@
                 hero_button: "더 알아보기",
                 about_title: "CAUS 소개",
                 about_subtitle: "차세대 스마트시티 구축을 위한 학제간 협력을 촉진합니다.",
-                about_description: `2024년 8월 설립된 도시 인공지능 연구소(CAUS)는 GS건설의 후원을 받아 국내 최초로 Urban AI에 특화된 연구를 수행하는 센터입니다. 
-                                    CAUS의 목표는 방대한 도시 데이터를 활용하여 계획부터 운영까지 지속 가능한 도시 성장을 지원할 핵심 기술을 개발하는 것입니다. 
-                                    스마트시티 연구를 넘어 도시 속 인간의 행동 패턴에 주목하여, 사람과 도시 환경 간의 상호작용을 밝혀내고 더 살기 좋고 공평한 도시를 만드는 것을 지향합니다.<br><br>
-                                    CAUS는 건설 및 환경공학, 컴퓨터공학, 인공지능, 산업 및 시스템공학 등 다양한 분야의 교수진으로 구성된 융합 연구팀입니다. 
-                                    KAIST 4개 학과의 7명의 교수진과 함께, Stanford Doerr School of Sustainability, MIT Senseable City Lab, NYU CUSP, NYU Marron Institute 등 세계 최고 수준의 도시 과학 연구기관의 5명의 교수진이 참여하고 있습니다. 
-                                    이를 통해 에너지 부족, 환경 오염, 안전 문제, 교통 혼잡 등 도시의 주요 문제를 데이터 기반으로 정확하게 분석하고 해결하기 위한 기반을 마련하고 있습니다.`,
+                about_description: `2024년 8월 설립된 도시 인공지능 연구소(CAUS)는 국내 최초로 Urban AI에 특화된 연구를 수행하는 센터입니다.
+                                        CAUS의 목표는 방대한 도시 데이터를 활용하여 계획부터 운영까지 지속 가능한 도시 성장을 지원할 핵심 기술을 개발하는 것입니다.
+                                        스마트시티 연구를 넘어 도시 속 인간의 행동 패턴에 주목하여, 사람과 도시 환경 간의 상호작용을 밝혀내고 더 살기 좋고 공평한 도시를 만드는 것을 지향합니다.<br><br>
+                                        CAUS는 건설 및 환경공학, 컴퓨터공학, 인공지능, 산업 및 시스템공학 등 다양한 분야의 교수진으로 구성된 융합 연구팀입니다.
+                                        KAIST 4개 학과의 7명의 교수진과 함께, Stanford Doerr School of Sustainability, MIT Senseable City Lab, NYU CUSP, NYU Marron Institute 등 세계 최고 수준의 도시 과학 연구기관의 5명의 교수진이 참여하고 있습니다.
+                                        이를 통해 에너지 부족, 환경 오염, 안전 문제, 교통 혼잡 등 도시의 주요 문제를 데이터 기반으로 정확하게 분석하고 해결하기 위한 기반을 마련하고 있습니다.`,
                 research_title: "주요 연구 분야",
                 research_subtitle: "저희 연구는 글로벌 네트워크부터 인간 중심의 도시 기술에 이르기까지 다섯 가지 핵심 분야를 중심으로 구성되어 있습니다.",
                 research_1_title: "Global Research Network",
@@ -841,10 +856,10 @@
                 research_5_desc_short: "도시 데이터를 시각화하고 분석 결과를 효율적으로 활용할 수 있는 종합 툴킷을 제공합니다.",
                 research_5_details: "<li>인터랙티브 데이터 시각화 모듈</li><li>분석 결과 매핑 모듈</li><li>자연어 기반 시뮬레이션 모듈</li><li>자연어 기반 지식 은행 Q&A 모듈</li><li>도시 계획 및 설계 지원 모듈</li><li>플랫폼 개발을 위한 자원 및 파트너 정의 가이드라인</li>",
                 people_title: "구성원",
-                people_subtitle: "우리의 비전을 이끌어가는 교수진, 연구원, 학생들을 만나보세요.",
                 people_professors_title: "KAIST 교수진",
                 people_scholars_title: "해외 협력 연구진",
-                people_students_title: "연구원 및 학생",
+                people_researchstaff_title: "연구원",
+                people_students_title: "학생",
                 person_website: "웹사이트",
                 person_yoonjin_yoon_title: "건설및환경공학과 교수 | CAUS 센터장",
                 person_changhyun_kwon_title: "산업및시스템공학과 교수",
@@ -868,18 +883,13 @@
                 event_caus_conf_title: "CAUS 연례 컨퍼런스",
                 event_caus_conf_desc: "도시 AI를 주제로 키노트, 패널, 데모가 진행되는 컨퍼런스 (일자 추후 공지)",
                 event_month_oct_2025: "2025년 10월",
-                event_gs_uam_title: "GS UAM 연구 미팅",
-                // event_gs_uam_desc: "GS UAM 파트너사와의 업무 회의.",
                 event_caus_monthly_title: "CAUS 연구진 월례 회의",
                 // event_caus_monthly_desc: "월간 연구 진행 상황 공유 및 계획 수립.",
                 event_vigilant_meeting_title: "VIGILANT 주간 회의",
                 // event_vigilant_kickoff_desc: "무인이동체 기반 도시 센싱 프로젝트 착수 회의.",
                 event_prismx_weekly_title: "PRISM-X 주간 회의",
                 // event_prismx_weekly_desc: "주간 업무 점검 및 마일스톤 공유.",
-                
-                news_title: "소식",
-                news_subtitle: "CAUS의 최신 공지와 업데이트를 확인하세요.",
-                
+
                 recording_li_title: "[Urban X 세미나 - 특별 강연] 현재와 미래 공역 진입자를 위한 불확실성 인지 항공 교통 관리",
                 recording_li_speaker: "연사: 맥스 리 교수 (미시간 대학교 조교수)",
                 recording_psyllidis_title: "[Urban X 세미나] 접근 형평성 평가를 위한 새로운 측정 및 도구 잠금 해제",
@@ -900,118 +910,120 @@
                 footer_follow: "소셜 미디어",
                 footer_copyright: "&copy; 2025 도시 인공지능 연구소 (CAUS). 모든 권리 보유.",
                 footer_license: "달리 명시되지 않은 한, 이 사이트의 콘텐츠는 <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank' class='hover:underline'>크리에이티브 커먼즈 저작자표시 4.0 국제 라이선스</a>에 따라 사용이 허가됩니다."
-            }  
+            }
         };
-    
+
         const setLangButtons = (lang) => {
             const desktopEn = document.getElementById('lang-en');
             const desktopKo = document.getElementById('lang-ko');
             const mobileEn = document.getElementById('lang-en-mobile');
             const mobileKo = document.getElementById('lang-ko-mobile');
             const isKo = lang === 'ko';
-    
+
             // desktop
             desktopEn?.classList.toggle('active', !isKo);
             desktopKo?.classList.toggle('active', isKo);
             desktopEn?.setAttribute('aria-pressed', (!isKo).toString());
             desktopKo?.setAttribute('aria-pressed', isKo.toString());
-    
+
             // mobile border style
             if (mobileEn && mobileKo) {
-              mobileEn.classList.toggle('border-white', !isKo);
-              mobileEn.classList.toggle('border-transparent', isKo);
-              mobileKo.classList.toggle('border-white', isKo);
-              mobileKo.classList.toggle('border-transparent', !isKo);
-              mobileEn.setAttribute('aria-pressed', (!isKo).toString());
-              mobileKo.setAttribute('aria-pressed', isKo.toString());
-        }
-      };
-
-    const changeLanguage = (lang) => {
-        document.documentElement.lang = lang;
-
-        document.querySelectorAll('[data-lang-key]').forEach(el => {
-            const key = el.getAttribute('data-lang-key');
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
+                mobileEn.classList.toggle('border-white', !isKo);
+                mobileEn.classList.toggle('border-transparent', isKo);
+                mobileKo.classList.toggle('border-white', isKo);
+                mobileKo.classList.toggle('border-transparent', !isKo);
+                mobileEn.setAttribute('aria-pressed', (!isKo).toString());
+                mobileKo.setAttribute('aria-pressed', isKo.toString());
             }
-        });
+        };
 
-        setLangButtons(lang);
-        localStorage.setItem('siteLang', lang);
-    };
+        const changeLanguage = (lang) => {
+            document.documentElement.lang = lang;
 
-    window.changeLanguage = changeLanguage;
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
 
-        
-        document.addEventListener('DOMContentLoaded', function() {
-        console.log("CAUS website script loaded and ready.");
+            setLangButtons(lang);
+            localStorage.setItem('siteLang', lang);
+        };
 
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        window.changeLanguage = changeLanguage;
 
-    // Listeners
-    document.getElementById('lang-en')?.addEventListener('click', () => changeLanguage('en'));
-    document.getElementById('lang-ko')?.addEventListener('click', () => changeLanguage('ko'));
-    document.getElementById('lang-en-mobile')?.addEventListener('click', () => changeLanguage('en'));
-    document.getElementById('lang-ko-mobile')?.addEventListener('click', () => changeLanguage('ko'));
 
-    // 신규(25.9.25.) - 바디 단위 클릭 리스너
-    document.body.addEventListener('click', (e) => {
-        const en = e.target.closest('#lang-en');
-        const ko = e.target.closest('#lang-ko');
-        const enM = e.target.closest('#lang-en-mobile');
-        const koM = e.target.closest('#lang-ko-mobile');
-        if (en || enM) { e.preventDefault(); window.changeLanguage('en'); }
-        if (ko || koM) { e.preventDefault(); window.changeLanguage('ko'); }
-    });
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("CAUS website script loaded and ready.");
 
-    // --- Header Scroll Effect ---
-    const header = document.getElementById('header');
-    const logo = document.getElementById('logo');
-    const navLinks = header.querySelectorAll('nav a');
-    const langSwitcher = document.getElementById('lang-switcher');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+            // Initialize Lucide Icons
+            lucide.createIcons();
 
-    const handleHeaderScroll = () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled', 'shadow-md');
-        } else {
-            header.classList.remove('scrolled', 'shadow-md');
-        }
-        /*
-        if (window.scrollY > 50) {
-            header.classList.add('bg-white', 'shadow-md');
-            header.classList.remove('py-3'); header.classList.add('py-2');
-            logo.classList.remove('p-2','bg-white/90','rounded-md');
-            navLinks.forEach(link => { link.classList.remove('nav-link'); link.classList.add('nav-link-scrolled'); });
-            langSwitcher.classList.remove('border-white/30'); langSwitcher.classList.add('border-gray-300');
-            langSwitcher.querySelectorAll('button').forEach(btn => btn.classList.add('lang-btn-scrolled'));
-            mobileMenuButton.classList.remove('text-white'); mobileMenuButton.classList.add('text-gray-900');
-        } else {
-            header.classList.remove('bg-white','shadow-md');
-            header.classList.add('py-3'); header.classList.remove('py-2');
-            logo.classList.add('p-2','bg-white/90','rounded-md');
-            navLinks.forEach(link => { link.classList.add('nav-link'); link.classList.remove('nav-link-scrolled'); });
-            langSwitcher.classList.add('border-white/30'); langSwitcher.classList.remove('border-gray-300');
-            langSwitcher.querySelectorAll('button').forEach(btn => btn.classList.remove('lang-btn-scrolled'));
-            mobileMenuButton.classList.add('text-white'); mobileMenuButton.classList.remove('text-gray-900');
-        }
-        */
-      };
+            // changeLanguage 위치 수정(25.9.26.)
 
-        // Mobile menu
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+            // Listeners
+            document.getElementById('lang-en')?.addEventListener('click', () => changeLanguage('en'));
+            document.getElementById('lang-ko')?.addEventListener('click', () => changeLanguage('ko'));
+            document.getElementById('lang-en-mobile')?.addEventListener('click', () => changeLanguage('en'));
+            document.getElementById('lang-ko-mobile')?.addEventListener('click', () => changeLanguage('ko'));
 
-        // Initial setup
-        handleHeaderScroll();
-        window.addEventListener('scroll', handleHeaderScroll);
-    
-        // Initialize language from storage (default: en)
-        const saved = localStorage.getItem('siteLang') || 'en';
-        changeLanguage(saved);
+            // 신규(25.9.25.) - 바디 단위 클릭 리스너
+            document.body.addEventListener('click', (e) => {
+                const en = e.target.closest('#lang-en');
+                const ko = e.target.closest('#lang-ko');
+                const enM = e.target.closest('#lang-en-mobile');
+                const koM = e.target.closest('#lang-ko-mobile');
+                if (en || enM) { e.preventDefault(); window.changeLanguage('en'); }
+                if (ko || koM) { e.preventDefault(); window.changeLanguage('ko'); }
+            });
+
+            // --- Header Scroll Effect ---
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo');
+            const navLinks = header.querySelectorAll('nav a');
+            const langSwitcher = document.getElementById('lang-switcher');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+            const handleHeaderScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled', 'shadow-md');
+                } else {
+                    header.classList.remove('scrolled', 'shadow-md');
+                }
+                /*
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white', 'shadow-md');
+                    header.classList.remove('py-3'); header.classList.add('py-2');
+                    logo.classList.remove('p-2','bg-white/90','rounded-md');
+                    navLinks.forEach(link => { link.classList.remove('nav-link'); link.classList.add('nav-link-scrolled'); });
+                    langSwitcher.classList.remove('border-white/30'); langSwitcher.classList.add('border-gray-300');
+                    langSwitcher.querySelectorAll('button').forEach(btn => btn.classList.add('lang-btn-scrolled'));
+                    mobileMenuButton.classList.remove('text-white'); mobileMenuButton.classList.add('text-gray-900');
+                } else {
+                    header.classList.remove('bg-white','shadow-md');
+                    header.classList.add('py-3'); header.classList.remove('py-2');
+                    logo.classList.add('p-2','bg-white/90','rounded-md');
+                    navLinks.forEach(link => { link.classList.add('nav-link'); link.classList.remove('nav-link-scrolled'); });
+                    langSwitcher.classList.add('border-white/30'); langSwitcher.classList.remove('border-gray-300');
+                    langSwitcher.querySelectorAll('button').forEach(btn => btn.classList.remove('lang-btn-scrolled'));
+                    mobileMenuButton.classList.add('text-white'); mobileMenuButton.classList.remove('text-gray-900');
+                }
+                */
+            };
+
+            // Mobile menu
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+            // Initial setup
+            handleHeaderScroll();
+            window.addEventListener('scroll', handleHeaderScroll);
+
+            // Initialize language from storage (default: en)
+            const saved = localStorage.getItem('siteLang') || 'en';
+            changeLanguage(saved);
         }); // End of DOMContentLoaded
     </script>
 
